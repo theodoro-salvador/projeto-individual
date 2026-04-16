@@ -45,8 +45,23 @@ main{
     height: 1000px;
     width: 100vw;
     max-width: 100%;
-    
+    box-sizing: border-box;
     border: 1px solid red;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.main-content{
+    height: 100%;
+    width: 60vw;
+    border: 1px solid blue;
+}
+
+.side-menu{
+    height: 100%;
+    width: 27vw;
+    border: 1px solid blue;
 }
 
 /* FOOTER */
