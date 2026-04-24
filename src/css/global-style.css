@@ -1,3 +1,18 @@
+/* FONTES */
+
+@font-face{
+    font-family: 'judas';
+    src: url('../fonts/Judas.ttf');
+}
+
+:root{
+    --sfv-main-color: #ffa904;
+    --sfv-alt-color-1: #dd0103;
+    --sfv-alt-color-2: #f73a05;
+
+    --shadow-color: #00000067;
+}
+
 /* CONFIGS */
 
 body{
@@ -8,15 +23,29 @@ body{
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    background-image: url(../img/background-1.png);
+    background-repeat: no-repeat;
+    background-size: 100% 200%;
+    background-attachment: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
 }
 
 /* HEADER */
 
 header{
     height: fit-content;
-    width: fit-content;
-    display: flex;
-    border: 1px solid blue;
+    width: 92vw;
+    box-sizing: border-box;
+    padding: 15px;
+    border-radius: 20px;
+    border: 3px solid var(--sfv-alt-color-1);
+    box-shadow: 0 5px 10px var(--shadow-color);
+    background-color: var(--sfv-main-color);
+    background-image: url(../img/background-sfv.jpg);
+    background-position: right 0;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
 }
 
 .header-content{
@@ -29,24 +58,42 @@ header{
 }
 
 .logo-title{
-    width: 400px;
+    width: 20vw;
+}
+
+.logo-title:hover{
+    filter: drop-shadow(0 0 10px #ffffff94);
 }
 
 nav{
-    width: 100%;
+    height: fit-content;
+    width: 50%;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+nav a{
+    font-size: 1.2em;
+    font-family: 'judas';
+    color: var(--sfv-alt-color-1);
+    -webkit-text-stroke: 1px #000000;
+    text-decoration: none;
+}
+
+nav a:hover{
+    color: var(--sfv-alt-color-2);
+    -webkit-text-stroke: 0.5px #ffffff;
 }
 
 /* MAIN */
 
 main{
-    height: 1000px;
+    height: fit-content;
     width: 100vw;
     max-width: 100%;
     box-sizing: border-box;
-    border: 1px solid red;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -55,13 +102,117 @@ main{
 .main-content{
     height: 100%;
     width: 60vw;
-    border: 1px solid blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    box-sizing: border-box;
+    padding: 20px 50px;
+    border-radius: 20px;
+    border: 3px solid var(--sfv-alt-color-1);
+    background-color: var(--sfv-main-color);
+    box-shadow: 0 5px 10px var(--shadow-color);
 }
 
-.side-menu{
+/* CONTEÚDO */
+
+.main-title{
+    margin-top: 20px;
+}
+
+.main-title span{
+    font-size: 2.35em;
+    font-family: 'judas';
+    color: var(--sfv-alt-color-1);
+    -webkit-text-stroke: 1.5px #000000;
+}
+
+.main-image{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.main-image span{
+    width: 50%;
+    font-size: 0.76em;
+    text-align: center;
+}
+
+.main-image img{
+    width: 40vw;
+    border: 3px solid var(--sfv-alt-color-1);
+    border-radius: 15px;
+    box-shadow: 0 5px 10px var(--shadow-color);
+}
+
+/* CARDS */
+
+.cards-section{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+}
+
+.card{
+    height: 15vw;
+    width: 15vw;
+}
+
+.card-outer{
     height: 100%;
-    width: 27vw;
-    border: 1px solid blue;
+    width: 100%;
+    border-radius: 50%;
+    background-color: var(--sfv-alt-color-2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-inner{
+    height: 95%;
+    width: 95%;
+    border-radius: 50%;
+    background-color: var(--sfv-alt-color-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-content{
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.card .card-img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -45%;
+    z-index: 1;
+    width: 65%;
+}
+
+.card a{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -40%;
+    z-index: 2;
+    font-size: 3em;
+    font-family: 'judas';
+    color: var(--sfv-alt-color-1);
+    -webkit-text-stroke: 2px #000000;
+    text-decoration: none;
+}
+
+.card a:hover{
+    color: #ffffff;
+    text-shadow: 0 0 10px #ffffff;
 }
 
 /* FOOTER */
