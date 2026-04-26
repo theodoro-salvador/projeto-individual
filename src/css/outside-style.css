@@ -1,0 +1,198 @@
+/* CONFIGS */
+
+body{
+    padding-top: 15px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background-image: url(../img/background-sfv.png);
+    background-repeat: no-repeat;
+    background-size: 100% 200%;
+    background-attachment: fixed;
+}
+
+/* HEADER */
+
+header{
+    height: fit-content;
+    width: 92vw;
+    box-sizing: border-box;
+    padding: 15px;
+    border-radius: 20px;
+    border: 3px solid var(--sfv-alt-color-1);
+    box-shadow: 0 5px 10px var(--shadow-color);
+    background-color: var(--sfv-main-color);
+    background-image: url(../img/sfv-cover.jpg);
+    background-position: right 0;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+}
+
+.header-content{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-title{
+    width: 20vw;
+}
+
+.logo-title:hover{
+    filter: drop-shadow(0 0 10px #ffffff94);
+}
+
+nav{
+    height: fit-content;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+nav a{
+    font-size: 1.2em;
+    font-family: 'judas';
+    color: var(--sfv-alt-color-1);
+    -webkit-text-stroke: 1px #000000;
+    text-decoration: none;
+}
+
+nav a:hover{
+    color: var(--sfv-alt-color-2);
+    -webkit-text-stroke: 0.5px #ffffff;
+}
+
+/* MAIN */
+
+main{
+    height: fit-content;
+    width: 100vw;
+    max-width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.main-content{
+    height: 100%;
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    box-sizing: border-box;
+    padding: 20px 50px;
+    border-radius: 20px;
+    border: 3px solid var(--sfv-alt-color-1);
+    background-color: var(--sfv-main-color);
+    box-shadow: 0 5px 10px var(--shadow-color);
+}
+
+/* TÍTULOS */
+
+.main-title{
+    margin-top: 20px;
+}
+
+.main-title span{
+    font-size: 2.35em;
+    font-family: 'judas';
+    color: var(--sfv-alt-color-1);
+    -webkit-text-stroke: 1.5px #000000;
+}
+
+/* IMAGENS */
+
+.main-image{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.main-image span{
+    width: 50%;
+    font-size: 0.76em;
+    text-align: center;
+}
+
+.main-image img{
+    width: 40vw;
+    border: 3px solid var(--sfv-alt-color-1);
+    border-radius: 15px;
+    box-shadow: 0 5px 10px var(--shadow-color);
+}
+
+/* FOOTER */
+
+footer{
+    height: fit-content;
+    width: 100vw;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 20px 50px 30px 50px;
+    border-top: 3px solid var(--sfv-alt-color-1);
+    background-color: var(--sfv-main-color);
+}
+
+.footer-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+/* LADO ESQUERDO */
+
+.footer-left{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-left span{
+    font-size: 0.8em;
+    text-align: center;
+}
+
+.footer-logo{
+    width: 20vw;
+}
+
+/* CENTRO */
+
+.footer-center{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10%;
+    text-align: center;
+}
+
+.footer-msg{
+    font-family: 'judas';
+    font-size: 1.5em;
+    color: var(--sfv-alt-color-1);
+    -webkit-text-stroke: 1px #000000;
+}
+
+/* LADO DIREITO */
+
+.footer-right{
+    height: fit-content;
+    width: 20%;
+    text-align: center;
+}
+
+.footer-icon{
+    height: 15vw;
+}

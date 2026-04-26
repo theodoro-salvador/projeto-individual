@@ -1,0 +1,85 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+/* HEADER */
+
+header{
+    height: 80px;
+    flex: 1;
+    border: 1px solid red;
+}
+
+/* MENU LATERAL */
+
+.left-menu{
+    height: 100vh;
+    width: 20vw;
+    box-sizing: border-box;
+    border: 1px solid red;
+}
+
+#register_form{
+    display: none;
+}
+
+.form{
+    height: fit-content;
+    width: 90%;
+    box-sizing: border-box;
+    padding: 15px;
+    border: 1px solid red;
+}
+
+.form-content{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.82em;
+}
+
+.form-title span{
+    font-family: 'judas';
+    font-size: 1.2em;
+}
+
+.inputs-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input{
+    display: flex;    
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.input label{
+    padding-left: 8px;
+}
+
+.input input{
+    width: 90%;
+}
+
+.submit{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.submit-button{
+    height: 30px;
+    width: fit-content;
+}
+
+.submit span span{
+    text-decoration: underline;
+    cursor: pointer;
+}
