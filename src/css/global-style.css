@@ -23,7 +23,7 @@ body{
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    background-image: url(../img/background-1.png);
+    background-image: url(../img/background-sfv.png);
     background-repeat: no-repeat;
     background-size: 100% 200%;
     background-attachment: fixed;
@@ -42,7 +42,7 @@ header{
     border: 3px solid var(--sfv-alt-color-1);
     box-shadow: 0 5px 10px var(--shadow-color);
     background-color: var(--sfv-main-color);
-    background-image: url(../img/background-sfv.jpg);
+    background-image: url(../img/sfv-cover.jpg);
     background-position: right 0;
     background-size: auto 100%;
     background-repeat: no-repeat;
@@ -114,7 +114,7 @@ main{
     box-shadow: 0 5px 10px var(--shadow-color);
 }
 
-/* CONTEÚDO */
+/* TÍTULOS */
 
 .main-title{
     margin-top: 20px;
@@ -126,6 +126,8 @@ main{
     color: var(--sfv-alt-color-1);
     -webkit-text-stroke: 1.5px #000000;
 }
+
+/* IMAGENS */
 
 .main-image{
     display: flex;
@@ -147,80 +149,68 @@ main{
     box-shadow: 0 5px 10px var(--shadow-color);
 }
 
-/* CARDS */
-
-.cards-section{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 50px;
-    justify-content: center;
-}
-
-.card{
-    height: 15vw;
-    width: 15vw;
-}
-
-.card-outer{
-    height: 100%;
-    width: 100%;
-    border-radius: 50%;
-    background-color: var(--sfv-alt-color-2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.card-inner{
-    height: 95%;
-    width: 95%;
-    border-radius: 50%;
-    background-color: var(--sfv-alt-color-1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.card-content{
-    height: 100%;
-    width: 100%;
-    position: relative;
-}
-
-.card .card-img{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    translate: -50% -45%;
-    z-index: 1;
-    width: 65%;
-}
-
-.card a{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    translate: -50% -40%;
-    z-index: 2;
-    font-size: 3em;
-    font-family: 'judas';
-    color: var(--sfv-alt-color-1);
-    -webkit-text-stroke: 2px #000000;
-    text-decoration: none;
-}
-
-.card a:hover{
-    color: #ffffff;
-    text-shadow: 0 0 10px #ffffff;
-}
-
 /* FOOTER */
 
 footer{
-    height: 100px;
+    height: fit-content;
     width: 100vw;
     max-width: 100%;
     box-sizing: border-box;
-    border: 1px solid yellow;
+    padding: 20px 50px 30px 50px;
+    border-top: 3px solid var(--sfv-alt-color-1);
+    background-color: var(--sfv-main-color);
+}
+
+.footer-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+/* LADO ESQUERDO */
+
+.footer-left{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-left span{
+    font-size: 0.8em;
+    text-align: center;
+}
+
+.footer-logo{
+    width: 20vw;
+}
+
+/* CENTRO */
+
+.footer-center{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10%;
+    text-align: center;
+}
+
+.footer-msg{
+    font-family: 'judas';
+    font-size: 1.5em;
+    color: var(--sfv-alt-color-1);
+    -webkit-text-stroke: 1px #000000;
+}
+
+/* LADO DIREITO */
+
+.footer-right{
+    height: fit-content;
+    width: 20%;
+    text-align: center;
+}
+
+.footer-icon{
+    height: 15vw;
 }
