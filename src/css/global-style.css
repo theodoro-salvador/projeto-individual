@@ -5,6 +5,8 @@
     src: url('../fonts/Judas.ttf');
 }
 
+/* VARÍAVEIS */
+
 :root{
     --sfv-main-color: #ffa904;
     --sfv-alt-color-1: #dd0103;
