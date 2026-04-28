@@ -21,6 +21,8 @@ header{
     border: 1px solid red;
 }
 
+/* FORMULÁRIO LOGIN/REGISTRO */
+
 #register_form{
     display: none;
 }
@@ -55,17 +57,16 @@ header{
 }
 
 .input{
+    width: 90%;
     display: flex;    
     flex-direction: column;
-    align-items: flex-start;
-}
-
-.input label{
-    padding-left: 8px;
+    align-items: center;
+    position: relative;
+    border: 1px solid red;
 }
 
 .input input{
-    width: 90%;
+    width: 100%;
 }
 
 .submit{
@@ -82,4 +83,25 @@ header{
 .submit span span{
     text-decoration: underline;
     cursor: pointer;
+}
+
+.validating-section{
+    width: 15vw;
+    min-height: fit-content;
+    position: absolute;
+    left: 110%;
+    padding: 3px;
+    box-sizing: border-box;
+    display: none;
+    flex-direction: column;
+    gap: 3px;
+    align-items: flex-start;
+    background-color: white;
+    border: 1px solid black;
+    font-size: 10px;
+    color: red;
+}
+
+.validation{
+    display: none;
 }
