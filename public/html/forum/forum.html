@@ -27,7 +27,7 @@
 
                         <div class="input">
                             <label for="login_password">Senha: </label>
-                            <input type="text" id="login_password">
+                            <input type="password" id="login_password">
                         </div>
                     </div>
 
@@ -66,7 +66,7 @@
 
                         <div class="input">
                             <label for="register_password">Senha: </label>
-                            <input type="text" id="input_register_password" oninput="validarSenha()">
+                            <input type="password" id="input_register_password" oninput="validarSenha()">
                             
                             <div class="validating-section" id="password_validation">
                                 <span class="validation" id="span_tamanho">A senha deve ter pelo menos 8 caracteres.</span>
@@ -158,20 +158,19 @@
             document.getElementById('email_validation').style.display = 'flex';
         }
 
-    }
-
-    // VALIDAÇÃO DE E-MAIL /////////////////////////////////////////////////////////
-
+        
+        // VALIDAÇÃO DE E-MAIL /////////////////////////////////////////////////////////
+        
         function validarArroba(){
-
+            
             let email = input_register_email.value;
-
+            
             if(email.includes('@')){
                 return true;
             }
-
+            
             return false;
-
+            
         }
 
         function validarPonto(){
@@ -183,14 +182,16 @@
                 if(email[i] == '.' && (i > email.indexOf('@') && email.indexOf('@') != -1)){
                     return true;
                 }
-
+                
             }
             
             return false;
-
+            
         }
-    
-    ///////////////////////////////////////////////////////////////////////////////
+        
+        ///////////////////////////////////////////////////////////////////////////////
+        
+    }
 
     function validarSenha(){
         
@@ -237,47 +238,46 @@
             document.getElementById('password_validation').style.display = 'flex';
         }
         
-    }
-    
-    // VALIDAÇÃO DE SENHA //////////////////////////////////////////////////////////////
-
+        
+        // VALIDAÇÃO DE SENHA //////////////////////////////////////////////////////////////
+        
         function validarCaracteresEspeciais(){
-
+            
             let password = input_register_password.value;
             let listaCaracteres = ['!','@','#','$','%','&','*','(',')','_','-','+','=',
             '{','}','[',']','/','|','.',',',';',':','<','>','?'];
-
+            
             for(let i = 0; i < listaCaracteres.length; i++){
                 if(password.includes(listaCaracteres[i])){
                     return true;
                 }
             }
-
+            
             return false;
-
+            
         }
-
+        
         function validarTamanho(){
-
+            
             let password = input_register_password.value;
-
+            
             if(password.length >= 8){
                 return true;
             }
-
+            
             return false;
-
+            
         }
-
+        
         function validarCaps(){
-
+            
             let password = input_register_password.value;
-
+            
             if(password != password.toLowerCase()
             && password != password.toUpperCase()){
-                return true;
-            }
-
+        return true;
+    }
+    
             return false;
 
         }
@@ -286,7 +286,7 @@
 
             let password = input_register_password.value;
             let listaNumeros = [1,2,3,4,5,6,7,8,9,0];
-
+            
             for(let i = 0; i < listaNumeros.length; i++){
                 if(password.includes(listaNumeros[i])){
                     return true;
@@ -294,10 +294,12 @@
             }
 
             return false;
-
+            
         }
-
-    ///////////////////////////////////////////////////////////////////
+        
+        ///////////////////////////////////////////////////////////////////
+        
+    }
 
     function registrar(){
 
