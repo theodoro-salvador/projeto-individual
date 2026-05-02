@@ -7,12 +7,19 @@
 
     <link rel="icon" href="../../src/img/icons/icon.png">
 
+    <script src="../../src/js/script.js"></script>
+
     <link rel="stylesheet" href="../../src/css/global-style.css">
     <link rel="stylesheet" href="../../src/css/forum-style.css">
 </head>
 <body>
     <div class="left-menu">
         <div class="left-menu-content">
+            <div class="user-box" id="user_box">
+                <span id="username_display">Nome de Usuário</span>
+                <span onclick="logout()">Sair</span>
+            </div>
+
             <div id="login_form" class="form">
                 <div class="form-content">
                     <div class="form-title">
@@ -50,37 +57,51 @@
 
                     <div class="inputs-section">
                         <div class="input">
-                            <label for="username">Nome de Usuário: </label>
-                            <input type="text" id="input_username">
+                            <label for="input_registrar_username">Nome de Usuário: </label>
+                            <input type="text" id="input_registrar_username">
                         </div>
 
                         <div class="input">
-                            <label for="register_email">E-mail: </label>
-                            <input type="text" id="input_register_email" oninput="validarEmail()">
+                            <label for="input_registrar_email">E-mail: </label>
+                            <input type="text" id="input_registrar_email" oninput="validarEmail()">
 
-                            <div class="validating-section" id="email_validation">
-                                <span class="validation" id="span_arroba">O e-mail deve ter '@'.</span>
-                                <span class="validation" id="span_ponto">O email deve ter '.' após o '@'.</span>
+                            <div class="div-validacao" id="validacao_email">
+                                <span class="span-validacao" id="span_arroba">O e-mail deve ter '@'.</span>
+                                <span class="span-validacao" id="span_ponto">O email deve ter '.' após o '@'.</span>
                             </div>
                         </div>
 
                         <div class="input">
-                            <label for="register_password">Senha: </label>
-                            <input type="password" id="input_register_password" oninput="validarSenha()">
+                            <label for="input_registrar_senha">Senha: </label>
+                            <input type="password" id="input_registrar_senha" oninput="validarSenha()">
                             
-                            <div class="validating-section" id="password_validation">
-                                <span class="validation" id="span_tamanho">A senha deve ter pelo menos 8 caracteres.</span>
-                                <span class="validation" id="span_caps">A senha deve ter pelo menos um caractere maiúsculo 
+                            <div class="div-validacao" id="validacao_senha">
+                                <span class="span-validacao" id="span_tamanho">A senha deve ter pelo menos 8 caracteres.</span>
+                                <span class="span-validacao" id="span_caps">A senha deve ter pelo menos um caractere maiúsculo 
                                     e um minúsculo.
                                 </span>
-                                <span class="validation" id="span_numeros">A senha deve ter pelo menos um número.</span>
-                                <span class="validation" id="span_caracteres_especiais">A senha deve ter pelo menos um caractere especial.</span>
+                                <span class="span-validacao" id="span_numeros">A senha deve ter pelo menos um número.</span>
+                                <span class="span-validacao" id="span_caracteres_especiais">A senha deve ter pelo menos um caractere especial.</span>
+                            </div>
+                        </div>
+
+                        <div class="input">
+                            <label for="input_confirmar_senha">Confirmar Senha: </label>
+                            <input type="password" id="input_confirmar_senha" oninput="validarConfirmacaoSenha()">
+
+                            <div class="div-validacao" id="validacao_confirmar_senha">
+                                <span class="span-validacao" id="span_confirmar_senha">Este campo deve ser igual a senha.</span>
                             </div>
                         </div>
                     </div>
 
                     <div class="submit">
                             <button class="submit-button" onclick="registrar()">Registrar</button>
+                            <span class="span-registro-realizado" id="span_registro_realizado">Registrado realizado com sucesso!</span>
+
+                            <div class="div-validacao" id="validar_vazios">
+                                <span class="span-validacao" id="span_vazios">Todos os campos devem ser preenchidos.</span>
+                            </div>
 
                             <span>
                                 Já tem uma conta? 
@@ -105,212 +126,3 @@
     </main>
 </body>
 </html>
-
-<script>
-
-    let form = 0;
-
-    function alterLoginRegis(){
-        
-        if(form == 0){
-
-            form = 1;
-
-            document.getElementById('login_form').style.display = 'none';
-            document.getElementById('register_form').style.display = 'block';
-
-        } else{
-
-            form = 0;
-
-            document.getElementById('register_form').style.display = 'none';
-            document.getElementById('login_form').style.display = 'block';
-
-        }
-
-    }
-
-    function validarEmail(){
-
-        let arroba = 0;
-        let ponto = 0;
-
-        document.getElementById('span_arroba').style.display = 'none';
-        document.getElementById('span_ponto').style.display = 'none';
-
-        if(validarArroba()){
-            arroba = 1;
-        } else{
-            document.getElementById('span_arroba').style.display = 'block';
-        }
-
-        if(validarPonto()){
-            ponto = 1;
-        } else{
-            document.getElementById('span_ponto').style.display = 'block';
-        }
-
-        let validacao = arroba + ponto;
-
-        if(validacao == 2){
-            document.getElementById('email_validation').style.display = 'none';
-        } else{
-            document.getElementById('email_validation').style.display = 'flex';
-        }
-
-        
-        // VALIDAÇÃO DE E-MAIL /////////////////////////////////////////////////////////
-        
-        function validarArroba(){
-            
-            let email = input_register_email.value;
-            
-            if(email.includes('@')){
-                return true;
-            }
-            
-            return false;
-            
-        }
-
-        function validarPonto(){
-
-            let email = input_register_email.value;
-
-            for(let i = 0; i < email.length; i++){
-
-                if(email[i] == '.' && (i > email.indexOf('@') && email.indexOf('@') != -1)){
-                    return true;
-                }
-                
-            }
-            
-            return false;
-            
-        }
-        
-        ///////////////////////////////////////////////////////////////////////////////
-        
-    }
-
-    function validarSenha(){
-        
-        let caracteresEspeciais = 0;
-        let tamanho = 0;
-        let caps = 0;
-        let numeros = 0;
-
-        document.getElementById('span_caracteres_especiais').style.display = 'none';
-        document.getElementById('span_tamanho').style.display = 'none';
-        document.getElementById('span_caps').style.display = 'none';
-        document.getElementById('span_numeros').style.display = 'none';
-
-
-        if(validarCaracteresEspeciais()){
-            caracteresEspeciais = 1;
-        } else{
-            document.getElementById('span_caracteres_especiais').style.display = 'block';
-        }
-
-        if(validarTamanho()){
-            tamanho = 1;
-        } else{
-            document.getElementById('span_tamanho').style.display = 'block';
-        }
-
-        if(validarCaps()){
-            caps = 1;
-        } else{
-            document.getElementById('span_caps').style.display = 'block';
-        }
-
-        if(validarNumeros()){
-            numeros = 1;
-        } else{
-            document.getElementById('span_numeros').style.display = 'block';
-        }
-
-        let validacao = caracteresEspeciais + tamanho + caps + numeros;
-
-        if(validacao == 4){
-            document.getElementById('password_validation').style.display = 'none';
-        } else{
-            document.getElementById('password_validation').style.display = 'flex';
-        }
-        
-        
-        // VALIDAÇÃO DE SENHA //////////////////////////////////////////////////////////////
-        
-        function validarCaracteresEspeciais(){
-            
-            let password = input_register_password.value;
-            let listaCaracteres = ['!','@','#','$','%','&','*','(',')','_','-','+','=',
-            '{','}','[',']','/','|','.',',',';',':','<','>','?'];
-            
-            for(let i = 0; i < listaCaracteres.length; i++){
-                if(password.includes(listaCaracteres[i])){
-                    return true;
-                }
-            }
-            
-            return false;
-            
-        }
-        
-        function validarTamanho(){
-            
-            let password = input_register_password.value;
-            
-            if(password.length >= 8){
-                return true;
-            }
-            
-            return false;
-            
-        }
-        
-        function validarCaps(){
-            
-            let password = input_register_password.value;
-            
-            if(password != password.toLowerCase()
-            && password != password.toUpperCase()){
-        return true;
-    }
-    
-            return false;
-
-        }
-
-        function validarNumeros(){
-
-            let password = input_register_password.value;
-            let listaNumeros = [1,2,3,4,5,6,7,8,9,0];
-            
-            for(let i = 0; i < listaNumeros.length; i++){
-                if(password.includes(listaNumeros[i])){
-                    return true;
-                }
-            }
-
-            return false;
-            
-        }
-        
-        ///////////////////////////////////////////////////////////////////
-        
-    }
-
-    function registrar(){
-
-        let username = input_username.value;
-        let email = input_register_email.value;
-        let password = input_register_password.value;
-
-        
-
-        
-        
-    }
-
-</script>
