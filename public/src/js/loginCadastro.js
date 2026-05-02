@@ -1,17 +1,36 @@
-let form = 0;
+    let login = 0;
 
-    function alterLoginRegis(){
-        
-        if(form == 0){
+    let form = 1;
+
+    function alterLoginUsu(){
+        if(login == 0){
 
             form = 1;
+
+            // document.getElementById('login_form').style.display = 'block';
+
+        } else{
+            
+            document.getElementById('login_form').style.display = 'none';
+            document.getElementById('user_box').style.display = 'flex';
+
+        }
+    }
+
+    window.onload = alterLoginUsu();
+
+    function alterLoginRegis(){
+
+        if(form == 1){
+
+            form = 2;
 
             document.getElementById('login_form').style.display = 'none';
             document.getElementById('register_form').style.display = 'block';
 
         } else{
 
-            form = 0;
+            form = 1;
 
             document.getElementById('register_form').style.display = 'none';
             document.getElementById('login_form').style.display = 'block';
@@ -234,7 +253,7 @@ let form = 0;
 
         let confirmarSenha = input_confirmar_senha.value;
         let senha = input_registrar_senha.value;
-console.log('oie')
+
         if(confirmarSenha == senha){
 
             validacaoConfirmarSenha = 1;
@@ -270,11 +289,11 @@ console.log('oie')
             senhaLet == '' ||
             confirmarSenha == ''
         ){
-            document.getElementById('validar_vazios').style.display = 'flex';
+            document.getElementById('registrar_validar_vazios').style.display = 'flex';
             document.getElementById('span_vazios').style.display = 'block';
 
             setInterval(function(){
-                document.getElementById('validar_vazios').style.display = 'none';
+                document.getElementById('registrar_validar_vazios').style.display = 'none';
                 document.getElementById('span_vazios').style.display = 'none';
             }, 5000);
 
@@ -303,6 +322,64 @@ console.log('oie')
                 document.getElementById('span_registro_realizado').style.display = 'block';
                 span_registro_realizado.innerHTML = 'Falha no registro';
             }
+        })
+
+    }
+
+    function entrar(){
+
+        let emailLet = input_login_email.value;
+        let senhaLet = input_login_senha.value;
+
+        if(emailLet == '' || senhaLet == ''){
+
+            document.getElementById('entrar_validar_vazios').style.display = 'flex';
+            document.getElementById('span_vazios').style.display = 'block';
+
+            setInterval(function(){
+                document.getElementById('entrar_validar_vazios').style.display = 'none';
+                document.getElementById('span_vazios').style.display = 'none';
+            }, 5000);
+
+            return false;
+            
+        }
+
+        fetch('/usuarios/autenticar', {
+
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                emailServer: emailLet,
+                senhaServer: senhaLet
+            })
+
+        }).then(function(resposta){
+            if(resposta.ok){
+                document.getElementById('span_login_realizado').style.display = 'block';
+                
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+                });
+
+                login = 1;
+
+                setInterval(alterLoginUsu(), 2000);
+            }else{
+
+                document.getElementById('span_login_realizado').style.display = 'block';
+                span_login_realizado.innerHTML = 'Falha ao entrar';
+
+            }
+
         })
 
     }

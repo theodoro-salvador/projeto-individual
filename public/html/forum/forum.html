@@ -7,7 +7,7 @@
 
     <link rel="icon" href="../../src/img/icons/icon.png">
 
-    <script src="../../src/js/script.js"></script>
+    <script src="../../src/js/loginCadastro.js"></script>
 
     <link rel="stylesheet" href="../../src/css/global-style.css">
     <link rel="stylesheet" href="../../src/css/forum-style.css">
@@ -28,18 +28,23 @@
 
                     <div class="inputs-section">
                         <div class="input">
-                            <label for="login_email">E-mail: </label>
-                            <input type="text" id="login_email">
+                            <label for="input_login_email">E-mail: </label>
+                            <input type="text" id="input_login_email">
                         </div>
 
                         <div class="input">
-                            <label for="login_password">Senha: </label>
-                            <input type="password" id="login_password">
+                            <label for="input_login_senha">Senha: </label>
+                            <input type="password" id="input_login_senha">
                         </div>
                     </div>
 
                     <div class="submit">
                         <button class="submit-button" onclick="entrar()">Entrar</button>
+                        <span class="span-registro-realizado" id="span_login_realizado">Login realizado com sucesso!</span>
+
+                        <div class="div-validacao" id="entrar_validar_vazios">
+                            <span class="span-validacao" id="span_vazios">Todos os campos devem ser preenchidos.</span>
+                        </div>
 
                         <span>
                             Não tem uma conta? 
@@ -97,9 +102,9 @@
 
                     <div class="submit">
                             <button class="submit-button" onclick="registrar()">Registrar</button>
-                            <span class="span-registro-realizado" id="span_registro_realizado">Registrado realizado com sucesso!</span>
+                            <span class="span-registro-realizado" id="span_registro_realizado">Registro realizado com sucesso!</span>
 
-                            <div class="div-validacao" id="validar_vazios">
+                            <div class="div-validacao" id="registrar_validar_vazios">
                                 <span class="span-validacao" id="span_vazios">Todos os campos devem ser preenchidos.</span>
                             </div>
 
