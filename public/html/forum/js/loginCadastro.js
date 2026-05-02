@@ -1,23 +1,5 @@
-    let login = 0;
 
     let form = 1;
-
-    function alterLoginUsu(){
-        if(login == 0){
-
-            form = 1;
-
-            // document.getElementById('login_form').style.display = 'block';
-
-        } else{
-            
-            document.getElementById('login_form').style.display = 'none';
-            document.getElementById('user_box').style.display = 'flex';
-
-        }
-    }
-
-    window.onload = alterLoginUsu();
 
     function alterLoginRegis(){
 
@@ -131,7 +113,7 @@
 
             document.getElementById('span_caracteres_especiais').style.display = 'block';
             
-            setInterval(function(){
+            setTimeout(function(){
                 document.getElementById('span_caracteres_especiais').style.display = 'none';
             }, 5000);
 
@@ -145,7 +127,7 @@
 
             document.getElementById('span_tamanho').style.display = 'block';
 
-            setInterval(function(){
+            setTimeout(function(){
                 document.getElementById('span_tamanho').style.display = 'none';
             }, 5000);
         }
@@ -158,7 +140,7 @@
 
             document.getElementById('span_caps').style.display = 'block';
 
-            setInterval(function(){
+            setTimeout(function(){
                 document.getElementById('span_caps').style.display = 'none';
             }, 5000);
         }
@@ -171,7 +153,7 @@
 
             document.getElementById('span_numeros').style.display = 'block';
 
-            setInterval(function(){
+            setTimeout(function(){
                 document.getElementById('span_numeros').style.display = 'none';
             }, 5000);
         }
@@ -268,7 +250,7 @@
             document.getElementById('validacao_confirmar_senha').style.display = 'flex';
             document.getElementById('span_confirmar_senha').style.display = 'block';
 
-            setInterval(function(){
+            setTimeout(function(){
                 document.getElementById('validacao_confirmar_senha').style.display = 'none';
                 document.getElementById('span_confirmar_senha').style.display = 'none';
             }, 5000);
@@ -292,7 +274,7 @@
             document.getElementById('registrar_validar_vazios').style.display = 'flex';
             document.getElementById('span_vazios').style.display = 'block';
 
-            setInterval(function(){
+            setTimeout(function(){
                 document.getElementById('registrar_validar_vazios').style.display = 'none';
                 document.getElementById('span_vazios').style.display = 'none';
             }, 5000);
@@ -317,7 +299,7 @@
             if(resposta.ok){
                 document.getElementById('span_registro_realizado').style.display = 'block';
 
-                setInterval(alterLoginRegis(), 2000);
+                setTimeout(alterLoginRegis(), 2000);
             } else{
                 document.getElementById('span_registro_realizado').style.display = 'block';
                 span_registro_realizado.innerHTML = 'Falha no registro';
@@ -336,7 +318,7 @@
             document.getElementById('entrar_validar_vazios').style.display = 'flex';
             document.getElementById('span_vazios').style.display = 'block';
 
-            setInterval(function(){
+            setTimeout(function(){
                 document.getElementById('entrar_validar_vazios').style.display = 'none';
                 document.getElementById('span_vazios').style.display = 'none';
             }, 5000);
@@ -372,7 +354,10 @@
 
                 login = 1;
 
-                setInterval(alterLoginUsu(), 2000);
+                setTimeout(function() {
+                    document.getElementById('span_login_realizado').style.display = 'none';
+                }, 2000);
+                setTimeout(alterLoginUsu, 2000);
             }else{
 
                 document.getElementById('span_login_realizado').style.display = 'block';
@@ -381,5 +366,8 @@
             }
 
         })
+
+        input_login_email.value = '';
+        input_login_senha.value = '';
 
     }

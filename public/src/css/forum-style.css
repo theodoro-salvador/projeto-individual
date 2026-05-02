@@ -33,6 +33,10 @@ header{
     flex-direction: column;
 }
 
+#sair{
+    cursor: pointer;
+}
+
 /* FORMULÁRIO LOGIN/REGISTRO */
 
 #register_form{

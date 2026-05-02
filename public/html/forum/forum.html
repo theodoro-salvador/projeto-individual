@@ -7,8 +7,6 @@
 
     <link rel="icon" href="../../src/img/icons/icon.png">
 
-    <script src="../../src/js/loginCadastro.js"></script>
-
     <link rel="stylesheet" href="../../src/css/global-style.css">
     <link rel="stylesheet" href="../../src/css/forum-style.css">
 </head>
@@ -17,7 +15,7 @@
         <div class="left-menu-content">
             <div class="user-box" id="user_box">
                 <span id="username_display">Nome de Usuário</span>
-                <span onclick="logout()">Sair</span>
+                <span onclick="sair()" id="sair">Sair</span>
             </div>
 
             <div id="login_form" class="form">
@@ -131,3 +129,6 @@
     </main>
 </body>
 </html>
+
+<script src="./js/sessao.js"></script>
+<script src="./js/loginCadastro.js"></script>
