@@ -7,9 +7,9 @@ body{
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    background-image: url(../img/background-sfv.png);
+    background-image: url(../img/dotf-background.png);
     background-repeat: no-repeat;
-    background-size: 100% 200%;
+    background-size: 100% auto;
     background-attachment: fixed;
 }
 
@@ -21,11 +21,11 @@ header{
     box-sizing: border-box;
     padding: 15px;
     border-radius: 20px;
-    border: 3px solid var(--sfv-alt-color-1);
+    border: 3px solid var(--dotf-alt-color-1);
     box-shadow: 0 5px 10px var(--shadow-color);
-    background-color: var(--sfv-main-color);
-    background-image: url(../img/sfv-cover.jpg);
-    background-position: right 0;
+    background-color: var(--dotf-main-color);
+    background-image: url(../img/dotf.png);
+    background-position: left 0;
     background-size: auto 100%;
     background-repeat: no-repeat;
 }
@@ -59,14 +59,13 @@ nav{
 nav a{
     font-size: 1.2em;
     font-family: 'judas';
-    color: var(--sfv-alt-color-1);
-    -webkit-text-stroke: 1px #000000;
+    color: var(--dotf-text-color-1);
+    -webkit-text-stroke: 1px var(--dotf-text-color-2);
     text-decoration: none;
 }
 
 nav a:hover{
-    color: var(--sfv-alt-color-2);
-    -webkit-text-stroke: 0.5px #ffffff;
+    -webkit-text-stroke: 1px var(--dotf-alt-color-4);
 }
 
 /* MAIN */
@@ -91,8 +90,8 @@ main{
     box-sizing: border-box;
     padding: 20px 50px;
     border-radius: 20px;
-    border: 3px solid var(--sfv-alt-color-1);
-    background-color: var(--sfv-main-color);
+    border: 3px solid var(--dotf-alt-color-1);
+    background-color: var(--dotf-main-color);
     box-shadow: 0 5px 10px var(--shadow-color);
 }
 
@@ -105,8 +104,8 @@ main{
 .main-title span{
     font-size: 2.35em;
     font-family: 'judas';
-    color: var(--sfv-alt-color-1);
-    -webkit-text-stroke: 1.5px #000000;
+    color: var(--dotf-text-color-1);
+    -webkit-text-stroke: 1.5px var(--dotf-text-color-2);
 }
 
 /* IMAGENS */
@@ -139,8 +138,8 @@ footer{
     max-width: 100%;
     box-sizing: border-box;
     padding: 20px 50px 30px 50px;
-    border-top: 3px solid var(--sfv-alt-color-1);
-    background-color: var(--sfv-main-color);
+    border-top: 3px solid var(--dotf-alt-color-1);
+    background-color: var(--dotf-main-color);
 }
 
 .footer-content{
@@ -181,8 +180,8 @@ footer{
 .footer-msg{
     font-family: 'judas';
     font-size: 1.5em;
-    color: var(--sfv-alt-color-1);
-    -webkit-text-stroke: 1px #000000;
+    color: var(--dotf-text-color-1);
+    -webkit-text-stroke: 1px var(--dotf-text-color-2);
 }
 
 /* LADO DIREITO */

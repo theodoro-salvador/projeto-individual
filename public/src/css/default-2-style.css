@@ -2,6 +2,7 @@ body{
     margin: 0;
     padding: 0;
     display: flex;
+    background-color: var(--sfv-alt-color-3);
 }
 
 /* HEADER */

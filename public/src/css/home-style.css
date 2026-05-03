@@ -17,7 +17,7 @@
     height: 100%;
     width: 100%;
     border-radius: 50%;
-    background-color: var(--sfv-alt-color-2);
+    background-color: var(--dotf-alt-color-2);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,7 +27,7 @@
     height: 95%;
     width: 95%;
     border-radius: 50%;
-    background-color: var(--sfv-alt-color-1);
+    background-color: var(--dotf-alt-color-1);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -56,12 +56,12 @@
     z-index: 2;
     font-size: 3em;
     font-family: 'judas';
-    color: var(--sfv-alt-color-1);
-    -webkit-text-stroke: 2px #000000;
+    color: var(--dotf-text-color-1);
+    -webkit-text-stroke: 2px var(--dotf-text-color-2);
     text-decoration: none;
 }
 
 .card a:hover{
-    color: #ffffff;
+    -webkit-text-stroke: 2px var(--dotf-alt-color-4);
     text-shadow: 0 0 10px #ffffff;
 }
