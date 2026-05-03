@@ -2,24 +2,79 @@ body{
     margin: 0;
     padding: 0;
     display: flex;
-    background-color: var(--sfv-alt-color-3);
+    background-color: var(--dotf-main-color);
 }
 
 /* HEADER */
 
 header{
-    height: 80px;
+    height: fit-content;
     flex: 1;
-    border: 1px solid red;
+    padding: 15px;
+}
+
+.header-content{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+    border: 3px solid var(--dotf-alt-color-1);
+    border-radius: 15px;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header-img{
+    width: 15vw;
+    filter: drop-shadow(0 0 5px var(--dotf-alt-color-1));
+}
+
+.header-img.img2{
+    transform: scaleX(-1);
+}
+
+.header-title{
+    width: 25%;
+    text-align: center;
+    font-size: 3em;
+    margin-top: 2%;
+    font-family: 'judas';
+    -webkit-text-stroke: 2px var(--dotf-text-color-2);
 }
 
 /* MENU LATERAL */
 
 .left-menu{
     height: 100vh;
-    width: 20vw;
+    width: 18vw;
     box-sizing: border-box;
-    border: 1px solid red;
+    padding: 5px;
+    display: flex;
+}
+
+.left-menu-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.left-menu-box{
+    border: 3px solid var(--dotf-alt-color-1);
+    border-radius: 15px;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    font-size: 0.82em;
+}
+
+.menu-title{
+    width: 100%;
+    font-family: 'judas';
+    font-size: 1.2em;
+    text-align: center;
+    -webkit-text-stroke: 1px var(--dotf-text-color-2);
 }
 
 /* INFORMAÇÕES DE USUÁRIO */
@@ -29,9 +84,10 @@ header{
     width: 90%;
     box-sizing: border-box;
     padding: 15px;
-    border: 1px solid red;
     display: none;
+    /* display: flex; */
     flex-direction: column;
+    gap: 5px;
 }
 
 #sair{
@@ -49,7 +105,6 @@ header{
     width: 90%;
     box-sizing: border-box;
     padding: 15px;
-    border: 1px solid red;
 }
 
 .form-content{
@@ -59,12 +114,6 @@ header{
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    font-size: 0.82em;
-}
-
-.form-title span{
-    font-family: 'judas';
-    font-size: 1.2em;
 }
 
 .inputs-section{
@@ -95,6 +144,17 @@ header{
 .submit-button{
     height: 30px;
     width: fit-content;
+    color: var(--dotf-text-color-1);
+    font-weight: bold;
+    background-color: var(--dotf-alt-color-2);
+    border: 2px solid var(--dotf-alt-color-1);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-button:hover{
+    background-color: var(--dotf-alt-color-4);
+    border-color: var(--dotf-alt-color-3);
 }
 
 .submit span span{
