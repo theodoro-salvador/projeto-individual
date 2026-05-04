@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="../../src/css/global-style.css">
     <link rel="stylesheet" href="../../src/css/default-2-style.css">
+    <link rel="stylesheet" href="../../src/css/forum-home-style.css">
 </head>
 <body>
     <div class="left-menu">
@@ -49,7 +50,7 @@
                         </div>
 
                         <span>
-                            Não tem uma conta? 
+                            Não tem uma conta? <br>
                             <span onclick="alterLoginRegis()">Registre-se</span>!
                         </span>
                     </div>
@@ -111,7 +112,7 @@
                             </div>
 
                             <span>
-                                Já tem uma conta? 
+                                Já tem uma conta? <br>
                                 <span onclick="alterLoginRegis()">Entre</span>!
                             </span>
                     </div>
@@ -120,23 +121,56 @@
         </div>
     </div>
 
-    <header>
-        <div class="header-content">
-            <img src="../../src/img/painkiller.png" alt="" class="header-img img1">
-
-            <span class="header-title">
-                Forum
+    <div class="right-side">
+        <header>
+            <div class="header-content">
+                <img src="../../src/img/painkiller.png" alt="" class="header-img img1">
+                
+                <span class="header-title">
+                    Forum
             </span>
-
+            
             <img src="../../src/img/painkiller.png" alt="" class="header-img img2">
         </div>
     </header>
-
+    
     <main>
         <div class="main-content">
+            <div class="topic">
+                <div class="topic-info">
+                    <div class="topic-title">
+                        <a href="#">
+                            <span>Título</span>
+                        </a>
+                        <hr>
+                    </div>
+                    
+                    <div class="topic-subtitle">
+                        <span>Este é o subtítulo desse tópico</span>
+                    </div>
+                </div>
 
+                <div class="topic-author">
+                    <span>Autor</span>
+                </div>
+
+                <div class="topic-posts">
+                    <span>X posts</span>
+                </div>
+
+                <div class="topic-date">
+                    <span>XX/XX/XXXX</span>
+                </div>
+
+                <div class="topic-last-post">
+                    <span>Por: usuário</span>
+                    <span>XX/XX/XXXX</span>
+                </div>
+            </div>
         </div>
     </main>
+</div>
+
 </body>
 </html>
 

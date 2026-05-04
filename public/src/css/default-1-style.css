@@ -124,7 +124,6 @@ main{
 }
 
 .main-image img{
-    width: 40vw;
     border: 3px solid var(--sfv-alt-color-1);
     border-radius: 15px;
     box-shadow: 0 5px 10px var(--shadow-color);
