@@ -298,11 +298,21 @@
 
             if(resposta.ok){
                 document.getElementById('span_registro_realizado').style.display = 'block';
+                document.getElementById('span_registro_realizado') = 'Registro realizado com sucesso!';
 
+                
+                input_registrar_username.value = '';
+                input_registrar_email.value = '';
+                input_registrar_senha.value = '';
+                input_confirmar_senha.value = '';
+                
+                setTimeout(function(){
+                    document.getElementById('span_registro_realizado').style.display = 'none';
+                }, 2000)
                 setTimeout(alterLoginRegis(), 2000);
             } else{
                 document.getElementById('span_registro_realizado').style.display = 'block';
-                span_registro_realizado.innerHTML = 'Falha no registro';
+                document.getElementById('span_registro_realizado') = 'Falha no registro';
             }
         })
 
@@ -340,6 +350,7 @@
 
         }).then(function(resposta){
             if(resposta.ok){
+                sdocument.getElementById('span_login_realizado').innerHTML = 'Login realizado com sucesso!';
                 document.getElementById('span_login_realizado').style.display = 'block';
                 
                 console.log(resposta);
@@ -360,8 +371,8 @@
                 setTimeout(alterLoginUsu, 2000);
             }else{
 
+                document.getElementById('span_login_realizado').innerHTML = 'Falha ao entrar';
                 document.getElementById('span_login_realizado').style.display = 'block';
-                span_login_realizado.innerHTML = 'Falha ao entrar';
 
             }
 

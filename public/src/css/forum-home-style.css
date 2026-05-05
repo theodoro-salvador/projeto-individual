@@ -71,7 +71,7 @@ main{
     flex-direction: row;
 }
 
-.topic-info{
+.topic-info-1{
     height: 100%;
     width: 55%;
     box-sizing: border-box;
@@ -81,4 +81,9 @@ main{
 
 .topic-title a{
     color: var(--dotf-alt-color-3);
+}
+
+.topic-info-2{
+    height: 100%;
+    width: 10%;
 }
