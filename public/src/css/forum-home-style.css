@@ -46,9 +46,26 @@ main{
     border: 3px solid var(--dotf-alt-color-1);
     border-radius: 15px;
     box-sizing: border-box;
-    padding: 7.5px 0.5px;
+    padding-bottom: 7.5px;
     scrollbar-gutter: stable;
     overflow-y: auto;
+}
+
+/* main::-webkit-scrollbar{
+    border-radius: 50%;
+    background-color: transparent;
+} */
+
+main::-webkit-scrollbar-track{
+    border-top-right-radius: 11px;
+    border-bottom-right-radius: 11px;
+    background: var(--dotf-alt-color-2);
+}
+
+main::-webkit-scrollbar-thumb{
+    width: 1px;
+    border-radius: 15px;
+    background-color: var(--dotf-alt-color-1);
 }
 
 .main-content{
@@ -57,20 +74,25 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 
 .main-header{
+    top: 0;
+    position: sticky;
     height: fit-content;
     width: 100%;
     box-sizing: border-box;
     padding: 0 5px;
     display: flex;
     flex-direction: row;
-    border-bottom: 1px solid red;
+    border-bottom: 2px solid var(--dotf-alt-color-1);
     text-align: center;
     align-items: center;
     font-size: 0.8em;
+    font-weight: bold;
     margin-bottom: 2px;
+    background-color: var(--dotf-alt-color-2);
 }
 
 .main-header-section-1{
@@ -78,6 +100,7 @@ main{
 }
 
 .main-header-section-2{
+    height: 100%;
     flex: 1;
     display: flex;
     flex-direction: row;
@@ -85,8 +108,12 @@ main{
 }
 
 .main-header-section-2 div{
+    height: 80%;
     width: 25%;
-    border-left: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid var(--dotf-alt-color-1);
 }
 
 /* TÓPICOS */
@@ -98,10 +125,10 @@ main{
     padding: 5px;
     /* border: 1px solid red; */
     border-top: 1px solid var(--dotf-alt-color-3);
-    border-bottom: 1px solid var(--dotf-alt-color-3);
+    /* border-bottom: 1px solid var(--dotf-alt-color-3); */
     display: flex;
     flex-direction: row;
-    background-color: var(--dotf-alt-color-4);
+    /* background-color: var(--dotf-alt-color-4); */
 }
 
 .topic-info-1{
