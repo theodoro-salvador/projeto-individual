@@ -1,27 +1,3 @@
-/* MENU LATERAL */
-.create-topic{
-    box-sizing: border-box;
-    padding: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-button.create-topic-button{
-    padding: 5px;
-    border-radius: 5px;
-    border: 2px solid var(--dotf-alt-color-1);
-    background-color: var(--dotf-alt-color-2);
-    color: var(--dotf-text-color-1);
-    font-weight: bold;
-    cursor: pointer;
-}
-
-button.create-topic-button:hover{
-    background-color: var(--dotf-alt-color-4);
-    border-color: var(--dotf-alt-color-3);
-}
-
 /* HEADER */
 
 header{
@@ -185,7 +161,7 @@ main::-webkit-scrollbar-thumb{
 
 /* SESSÃO CRIAR TÓPICO */
 
-.create-topic-section{
+.topic-form-section{
     display: none;
     z-index: 10;
     
@@ -201,16 +177,25 @@ main::-webkit-scrollbar-thumb{
     background-color: var(--shadow-color);
 }
 
-.create-topic-section-content{
+.topic-form-section-content{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     height: 70vh;
     width: 40vw;
+    box-sizing: border-box;
+    padding: 15px;
     border-radius: 15px;
     border: 3px solid var(--dotf-alt-color-1);
     background-color: var(--dotf-main-color);
+}
+
+.topic-form-title span{
+    color: var(--dotf-text-color-1);
+    -webkit-text-stroke: 1px var(--dotf-text-color-2);
+    font-family: 'judas';
+    font-size: 1.5em;
 }
 
 .topic-form{
