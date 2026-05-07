@@ -120,7 +120,7 @@
             </div>
 
             <div class="left-menu-box create-topic">
-                    <button class="create-topic-button" onclick="abrirCriarTopico()">
+                    <button class="create-topic-button" onclick="abrirFecharCriarTopico('block')">
                         Criar Tópico
                     </button>
             </div>
@@ -128,7 +128,7 @@
     </div>
 
     <div class="topic-form-section" id="topico_form">
-        <div class="topic-form-background" onclick="abrirCriarTopico()"></div>
+        <div class="topic-form-background" onclick="abrirFecharCriarTopico('none')"></div>
         
         <div class="topic-form-section-content">
             <div class="topic-form-title">
@@ -136,7 +136,29 @@
             </div>
 
             <div class="topic-form">
+                <div class="topic-input">
+                    <label for="">
+                        Nome: 
+                    </label>
+                    <input type="text" maxlength="50">
+                </div>
 
+                <div class="topic-input">
+                    <label for="">
+                        Descrição: 
+                    </label>
+                    <textarea name="" id="" rows="4" cols="42" maxlength="255"></textarea>
+                </div>
+            </div>
+            
+            <div class="topic-submit">
+                <button onclick="abrirFecharCriarTopico('none')">
+                    Cancelar
+                </button>
+
+                <button onclick="criarTopico()">
+                    Criar Tópico
+                </button>
             </div>
         </div>
     </div>
@@ -190,7 +212,7 @@
                     </div>
                     
                     <div class="topic-subtitle">
-                        <span>Este é o subtítulo desse tópico</span>
+                        <span>Esta é a descrição desse tópico</span>
                     </div>
                 </div>
 
