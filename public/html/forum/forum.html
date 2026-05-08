@@ -120,9 +120,15 @@
             </div>
 
             <div class="left-menu-box create-topic">
-                    <button class="create-topic-button" onclick="abrirFecharCriarTopico('block')">
-                        Criar Tópico
-                    </button>
+                    <div class="create-topic-button">
+                        <button onclick="abrirFecharCriarTopico('block')">
+                            Criar Tópico
+                        </button>
+
+                        <div class="div-validacao" id="validacao_login_topic">
+                            <span class="span-validacao" id="span_validacao_login_topic">É necessário estar logado para criar um tópico.</span>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>
@@ -137,17 +143,17 @@
 
             <div class="topic-form">
                 <div class="topic-input">
-                    <label for="">
+                    <label for="nome_topico">
                         Nome: 
                     </label>
-                    <input type="text" maxlength="50">
+                    <input type="text" name="nome_topico" id="nome_topico" maxlength="50">
                 </div>
 
                 <div class="topic-input">
-                    <label for="">
+                    <label for="descrica_topico">
                         Descrição: 
                     </label>
-                    <textarea name="" id="" rows="4" cols="42" maxlength="255"></textarea>
+                    <textarea name="descricao_topico" id="descricao_topico" rows="4" cols="42" maxlength="255"></textarea>
                 </div>
             </div>
             

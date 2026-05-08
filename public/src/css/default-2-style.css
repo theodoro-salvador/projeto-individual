@@ -46,6 +46,7 @@ button:hover{
 }
 
 .left-menu-content{
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -80,6 +81,7 @@ button:hover{
 
 .user-box{
     height: fit-content;
+    width: 100%;
     box-sizing: border-box;
     padding: 15px;
     display: none;
@@ -164,6 +166,7 @@ button:hover{
 }
 
 .div-validacao{
+    z-index: 11;
     width: 15vw;
     min-height: fit-content;
     position: absolute;

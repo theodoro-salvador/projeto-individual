@@ -160,9 +160,12 @@ main::-webkit-scrollbar-thumb{
 }
 
 /* SESSÃO CRIAR TÓPICO */
+.create-topic-button{
+    position: relative;
+}
 
 .topic-form-section{
-    /* display: none; */
+    display: none;
     z-index: 10;
 }
 

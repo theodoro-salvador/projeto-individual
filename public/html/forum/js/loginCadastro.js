@@ -350,7 +350,7 @@
 
         }).then(function(resposta){
             if(resposta.ok){
-                sdocument.getElementById('span_login_realizado').innerHTML = 'Login realizado com sucesso!';
+                document.getElementById('span_login_realizado').innerHTML = 'Login realizado com sucesso!';
                 document.getElementById('span_login_realizado').style.display = 'block';
                 
                 console.log(resposta);

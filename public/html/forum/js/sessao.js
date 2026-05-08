@@ -1,17 +1,24 @@
+let login = 1;
 
-function alterLoginUsu(){
-    
-    let login = 1;
+window.onload = conferirLogin();
+
+function conferirLogin(){
 
     if(sessionStorage.ID_USUARIO == undefined){
         console.log(sessionStorage.ID_USUARIO);
         login = 0;
-        console.log('primeiro if, login = 0');
     } else{
         console.log(sessionStorage.ID_USUARIO);
         login = 1;
-        console.log('primeiro if, login = 1');
     }
+
+    return console.log(login);
+    
+}
+
+function alterLoginUsu(){
+
+    conferirLogin();
 
     if(login == 0){
 
@@ -21,7 +28,6 @@ function alterLoginUsu(){
 
         document.getElementById('user_box').style.display = 'none';
 
-        console.log('segundo if, login = 0');
 
     } else{
         
@@ -30,7 +36,6 @@ function alterLoginUsu(){
 
         exibirSessao();
 
-        console.log('segundo if, login = 1');
 
     }
 }
@@ -48,11 +53,9 @@ function exibirSessao(){
 }
 
 function sair(){
-    console.log(sessionStorage.ID_USUARIO, 'executando função sair');
 
     sessionStorage.clear();
 
-    console.log(sessionStorage.ID_USUARIO, 'executando função sair 2');
-
     setInterval(alterLoginUsu(), 2000);
+
 }
