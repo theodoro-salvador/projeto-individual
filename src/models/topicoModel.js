@@ -11,14 +11,30 @@ function exibir(idTopico){
   var instrucaoSql = `
 
     SELECT
-      autor.nome AS autorTopico,
-      dtCriacao,
+      usuario.nome AS autor,
+      YEAR(dtCriacao) AS ano,
+      MONTH(dtCriacao) AS mes,
+      DAY(dtCriacao) AS dia,
       titulo,
       descricao
     FROM topico
-      JOIN usuario AS autor
+      JOIN usuario
         ON fkAutor = idUsuario
     WHERE idTopico = ${idTopico}; 
+
+  `;
+
+  return database.executar(instrucaoSql);
+
+}
+
+function receberIds(){
+
+  var instrucaoSql = `
+
+    SELECT
+      idTopico
+    FROM topico;
 
   `;
 
@@ -29,4 +45,5 @@ function exibir(idTopico){
 module.exports = { 
   cadastrar, 
   exibir,
+  receberIds,
 };

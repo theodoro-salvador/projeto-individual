@@ -11,4 +11,8 @@ router.get('/exibir/:idTopico', function (req, res) {
     topicoController.exibir(req, res);
 })
 
+router.get('/receberIds', function (req, res){
+    topicoController.receberIds(req, res);
+})
+
 module.exports = router;

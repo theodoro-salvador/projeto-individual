@@ -56,10 +56,105 @@ function criarTopico(){
 
 }
 
-function obterDadosTopicos(idTopico){
-    fetch()
+function receberIds(){
+console.log('oi');
+
+    fetch('/topicos/receberIds')
+    .then(response => {
+
+        if(response.status == 200){
+            response.json().then(resposta =>{
+
+                console.log(`Dados recebidos:  ${JSON.stringify(resposta)}`)
+                
+                exibirTopicos(resposta);
+
+            })
+
+        }
+
+    });
+
 }
 
-function exibirTopicos(){
+function exibirTopicos(resposta){
+
+    let listaIds = resposta;
+
+    console.log(listaIds)
+    // receberIds();
+
+
+
+    for(let i = 0; i < listaIds.length; i++){
+
+        let idTopico = listaIds[i].idTopico;
+
+        console.log('ID: ', idTopico);
+
+        fetch(`/topicos/exibir/${idTopico}`)
+        .then(function(response){
+
+            if(response.ok){
+
+                response.json().then(function(registroTopico){
+
+                    let tituloTopico = registroTopico[0].titulo;
+                    let descricaoTopico = registroTopico[0].descricao;
+                    let anoTopico = registroTopico[0].ano;
+                    let mesTopico = registroTopico[0].mes;
+                    let diaTopico = registroTopico[0].dia;
+                    let autorTopico = registroTopico[0].autor;
+
+                    document.getElementById('main_content').innerHTML += `
+
+                        <div class="topic">
+                            <div class="topic-info-1">
+                                <div class="topic-title">
+                                    <a href="#">
+                                        <span>${tituloTopico}</span>
+                                    </a>
+                                    <hr>
+                                </div>
+                                
+                                <div class="topic-subtitle">
+                                    <span>${descricaoTopico}</span>
+                                </div>
+                            </div>
+
+                            <div class="topic-info-2">
+
+                                <div>
+                                    <span>${autorTopico}</span>
+                                </div>
+                                
+                                <div>
+                                    <span>${diaTopico}/${mesTopico}/${anoTopico}</span>
+                                </div>
+                                
+                                <div>
+                                    <span>X</span>
+                                </div>
+
+                                <div>
+                                    <span>Por: usuário</span>
+                                    <span>XX/XX/XXXX</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    `;
+
+                })
+
+            }
+
+        })
+
+    }
+
+
 
 }
+
+    window.onload = receberIds();

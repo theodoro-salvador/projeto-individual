@@ -34,6 +34,20 @@ function exibir(req, res){
 
 }
 
+function receberIds(req, res){
+
+  topicoModel.receberIds().then(function (resultado){
+
+    if(resultado.length > 0){
+      res.status(200).json(resultado);
+    }
+
+  });
+
+}
+
 module.exports = {
   cadastrar,
+  exibir,
+  receberIds,
 };
