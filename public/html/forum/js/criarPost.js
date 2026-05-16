@@ -65,6 +65,7 @@ async function fazerPost(){
 
 }
 
+window.onload = exibirDadosTopico();
 window.onload = receberIds();
 
 function receberIds(){
@@ -142,5 +143,61 @@ async function exibirPosts(resposta){
         }
 
     }
+
+}
+
+function exibirDadosTopico(){
+
+    let idTopico = new URLSearchParams(window.location.search).get('id');
+
+    fetch(`/topicos/exibir/${idTopico}`)
+    .then(resposta => {
+
+        if(resposta.ok){
+
+            resposta.json().then(resposta => {
+
+                let dadosTopico = resposta;
+
+                console.log(dadosTopico);
+
+                let tituloTopico = dadosTopico[0].titulo;
+                let autorTopico = dadosTopico[0].autor;
+                let descricaoTopico = dadosTopico[0].descricao;
+                let anoTopico = dadosTopico[0].ano;
+                let mesTopico = dadosTopico[0].mes;
+                let diaTopico = dadosTopico[0].dia;
+
+                document.getElementById('dados_topico').innerHTML +=
+                `
+                    <div class="main-header-right">
+                        <div class="topico-titulo">
+                            <span>${tituloTopico}</span>
+                        </div>
+                        
+                        <div class="topico-descricao">
+                            <span>
+                                ${descricaoTopico}
+                            </span>
+                        </div>
+                    </div>
+                
+                    <div class="main-header-left">
+                        <div class="topico-autor">
+                            <span>Criado por: ${autorTopico}</span>
+                        </div>
+                        
+                        <div class="topico-data">
+                            <span>Criado em: ${diaTopico}/${mesTopico}/${anoTopico}</span>
+                        </div>
+                    </div>
+                `;
+
+
+            })
+
+        }
+
+    })
 
 }
