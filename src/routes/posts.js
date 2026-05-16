@@ -11,4 +11,12 @@ router.get('/obterIdPost/:idTopico', function(req, res){
     postController.obterIdPost(req, res);
 });
 
+router.get('/receberIds/:idTopico', function(req, res){
+    postController.receberIds(req, res);
+});
+
+router.get('/exibir/:postagem', function(req, res){
+    postController.exibir(req, res);
+});
+
 module.exports = router;

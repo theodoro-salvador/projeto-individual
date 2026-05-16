@@ -25,8 +25,36 @@ function obterIdPost(req, res){
 
         } else{
             
-            res.status(204).send('Nenhum registro encontrado');
+            res.status(204).send('Nenhum resultado encontrado');
 
+        }
+
+    })
+
+}
+
+function receberIds(req, res){
+
+    let idTopico = req.params.idTopico;
+
+    postModel.receberIds(idTopico).then(function (resposta){
+
+        if(resposta.length > 0){
+            res.status(200).json(resposta);
+        }
+
+    });
+
+}
+
+function exibir(req, res){
+
+    let postagem = req.params.postagem;
+
+    postModel.exibir(postagem).then(function (resposta){
+
+        if(resposta.length > 0){
+            res.status(200).json(resposta);
         }
 
     })
@@ -36,4 +64,6 @@ function obterIdPost(req, res){
 module.exports = {
     cadastrar,
     obterIdPost,
+    receberIds,
+    exibir,
 }

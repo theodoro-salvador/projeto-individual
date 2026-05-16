@@ -16,11 +16,28 @@ function exibir(idTopico){
       MONTH(dtCriacao) AS mes,
       DAY(dtCriacao) AS dia,
       titulo,
-      descricao
+      descricao,
+      usuario2.nome AS autorPostagem,
+      YEAR(dtPostagem) AS anoPostagem,
+      MONTH(dtPostagem) AS mesPostagem,
+      DAY(dtPostagem) AS diaPostagem,
+      dtPostagem,
+      (
+        SELECT 
+          COUNT(idPostagem)
+        FROM postagem
+        WHERE fkTopico = ${idTopico}
+      ) AS qtdPostagens
     FROM topico
       JOIN usuario
-        ON fkAutor = idUsuario
-    WHERE idTopico = ${idTopico}; 
+        ON topico.fkAutor = usuario.idUsuario
+      LEFT JOIN postagem
+        ON fkTopico = idTopico
+      LEFT JOIN usuario AS usuario2
+        ON postagem.fkAutor = usuario2.idUsuario
+    WHERE idTopico = ${idTopico}
+    ORDER BY dtPostagem DESC
+    LIMIT 1; 
 
   `;
 
@@ -34,7 +51,8 @@ function receberIds(){
 
     SELECT
       idTopico
-    FROM topico;
+    FROM topico
+    ORDER BY idTopico ASC;
 
   `;
 

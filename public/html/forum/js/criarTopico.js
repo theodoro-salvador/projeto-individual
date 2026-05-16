@@ -57,7 +57,6 @@ function criarTopico(){
 }
 
 function receberIds(){
-console.log('oi');
 
     fetch('/topicos/receberIds')
     .then(response => {
@@ -77,7 +76,7 @@ console.log('oi');
 
 }
 
-function exibirTopicos(resposta){
+async function exibirTopicos(resposta){
 
     let listaIds = resposta;
 
@@ -92,12 +91,13 @@ function exibirTopicos(resposta){
 
         console.log('ID: ', idTopico);
 
-        fetch(`/topicos/exibir/${idTopico}`)
-        .then(function(response){
+        // .then(function(resposta){
+            let resposta = await fetch(`/topicos/exibir/${idTopico}`)
 
-            if(response.ok){
+            if(resposta.ok){
 
-                response.json().then(function(registroTopico){
+                let registroTopico = await resposta.json();
+                // response.json().then(function(registroTopico){
 
                     let tituloTopico = registroTopico[0].titulo;
                     let descricaoTopico = registroTopico[0].descricao;
@@ -105,6 +105,11 @@ function exibirTopicos(resposta){
                     let mesTopico = registroTopico[0].mes;
                     let diaTopico = registroTopico[0].dia;
                     let autorTopico = registroTopico[0].autor;
+                    let autorPostagem = registroTopico[0].autorPostagem;
+                    let anoPostagem = registroTopico[0].anoPostagem;
+                    let mesPostagem = registroTopico[0].mesPostagem;
+                    let diaPostagem = registroTopico[0].diaPostagem;
+                    let qtdPostagens = registroTopico[0].qtdPostagens;
 
                     document.getElementById('main_content').innerHTML += `
 
@@ -133,23 +138,23 @@ function exibirTopicos(resposta){
                                 </div>
                                 
                                 <div>
-                                    <span>X</span>
+                                    <span>${qtdPostagens}</span>
                                 </div>
 
                                 <div>
-                                    <span>Por: usuário</span>
-                                    <span>XX/XX/XXXX</span>
+                                    <span>Por: ${autorPostagem}</span>
+                                    <span>Em: ${diaPostagem}/${mesPostagem}/${anoPostagem}</span>
                                 </div>
                             </div>
                         </div>
 
                     `;
 
-                })
+                // })
 
             }
 
-        })
+        // })
 
     }
 
