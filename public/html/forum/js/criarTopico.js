@@ -111,7 +111,7 @@ function exibirTopicos(resposta){
                         <div class="topic">
                             <div class="topic-info-1">
                                 <div class="topic-title">
-                                    <a href="#">
+                                    <a href="./topico.html?id=${idTopico}">
                                         <span>${tituloTopico}</span>
                                     </a>
                                     <hr>
@@ -156,5 +156,3 @@ function exibirTopicos(resposta){
 
 
 }
-
-    window.onload = receberIds();

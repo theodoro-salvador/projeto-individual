@@ -21,6 +21,7 @@ var avisosRouter = require("./src/routes/avisos");
 var medidasRouter = require("./src/routes/medidas");
 var aquariosRouter = require("./src/routes/aquarios");
 var topicosRouter = require("./src/routes/topicos");
+var postsRouter = require("./src/routes/posts");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -34,6 +35,7 @@ app.use("/avisos", avisosRouter);
 app.use("/medidas", medidasRouter);
 app.use("/aquarios", aquariosRouter);
 app.use("/topicos", topicosRouter);
+app.use("/posts", postsRouter);
 
 app.listen(PORTA_APP, function () {
     console.log(`

@@ -124,18 +124,45 @@
             <div class="left-menu-box create-topic">
                     <div class="create-topic-button">
                         <button onclick="abrirFecharCriarTopico('block')">
-                            Criar Tópico
+                            Fazer Publicação
                         </button>
 
                         <div class="div-validacao" id="validacao_login_topic">
-                            <span class="span-validacao" id="span_validacao_login_topic">É necessário estar logado para criar um tópico.</span>
+                            <span class="span-validacao" id="span_validacao_login_topic">É necessário estar logado para fazer uma publicação.</span>
                         </div>
                     </div>
             </div>
         </div>
     </div>
 
-    
+    <div class="topic-form-section" id="topico_form">
+        <div class="topic-form-background" onclick="abrirFecharCriarTopico('none')"></div>
+        
+        <div class="topic-form-section-content">
+            <div class="topic-form-title">
+                <span>Fazer Publicacao</span>
+            </div>
+
+            <div class="topic-form">
+                <div class="topic-input">
+                    <label for="texto_post">
+                        Digite o conteúdo da sua publicação: 
+                    </label>
+                    <textarea name="texto_post" id="texto_post" rows="8" cols="84" maxlength="500"></textarea>
+                </div>
+            </div>
+            
+            <div class="topic-submit">
+                <button onclick="abrirFecharCriarTopico('none')">
+                    Cancelar
+                </button>
+
+                <button onclick="fazerPost()">
+                    Fazer Publicação
+                </button>
+            </div>
+        </div>
+    </div>
 
     <div class="right-side">
 
@@ -212,3 +239,7 @@
 <script src="./js/sessao.js"></script>
 <script src="./js/loginCadastro.js"></script>
 <script src="./js/criarTopico.js"></script>
+<script src="./js/criarPost.js"></script>
+<script>
+    let params = new URLSearchParams(window.location.search).get('id');
+</script>
