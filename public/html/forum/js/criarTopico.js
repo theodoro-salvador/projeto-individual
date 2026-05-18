@@ -106,9 +106,10 @@ async function exibirTopicos(resposta){
                     let diaTopico = registroTopico[0].dia;
                     let autorTopico = registroTopico[0].autor;
                     let autorPostagem = registroTopico[0].autorPostagem;
-                    let anoPostagem = registroTopico[0].anoPostagem;
-                    let mesPostagem = registroTopico[0].mesPostagem;
-                    let diaPostagem = registroTopico[0].diaPostagem;
+                    // let anoPostagem = registroTopico[0].anoPostagem;
+                    // let mesPostagem = registroTopico[0].mesPostagem;
+                    // let diaPostagem = registroTopico[0].diaPostagem;
+                    let ultimaPostagem = registroTopico[0].ultimaPostagem;
                     let qtdPostagens = registroTopico[0].qtdPostagens;
 
                     document.getElementById('main_content').innerHTML += `
@@ -142,8 +143,7 @@ async function exibirTopicos(resposta){
                                 </div>
 
                                 <div>
-                                    <span>Por: ${autorPostagem}</span>
-                                    <span>Em: ${diaPostagem}/${mesPostagem}/${anoPostagem}</span>
+                                    <span>${ultimaPostagem}</span>
                                 </div>
                             </div>
                         </div>
