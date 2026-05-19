@@ -119,7 +119,7 @@
                 </div>
             </div>
 
-            <div class="left-menu-box create-topic">
+            <div class="left-menu-box button">
                     <div class="create-topic-button">
                         <button onclick="abrirFecharCriarTopico('block')">
                             Criar Tópico
@@ -129,6 +129,12 @@
                             <span class="span-validacao" id="span_validacao_login_topic">É necessário estar logado para criar um tópico.</span>
                         </div>
                     </div>
+            </div>
+
+            <div class="left-menu-box button">
+                <a href="../../index.html">
+                    <button>Voltar</button>
+                </a>
             </div>
         </div>
     </div>
@@ -155,6 +161,11 @@
                     </label>
                     <textarea name="descricao_topico" id="descricao_topico" rows="4" cols="42" maxlength="255"></textarea>
                 </div>
+                
+            </div>
+
+            <div class="topic-alert" id="alerta_topico_criado">
+                <span>Tópico criado com sucesso!</span>
             </div>
             
             <div class="topic-submit">

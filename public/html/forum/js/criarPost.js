@@ -35,7 +35,11 @@ async function fazerPost(){
     console.log('Id Postagem:', idPostagem);
 
     if(textoPost == ''){
-        console.log('tudo vazio');
+
+            document.getElementById('alerta_post_feito').style.display = 'block';
+            document.getElementById('alerta_post_feito').style.color = 'red';
+            document.getElementById('alerta_post_feito').innerHTML = 'Preencha o conteúdo da postagem!';
+        
         return;
     }
 
@@ -55,10 +59,22 @@ async function fazerPost(){
 
         if(resposta.ok){
 
-            setTimeout(abrirFecharCriarTopico('none'), 2000);
+            document.getElementById('alerta_post_feito').style.display = 'block';
+            document.getElementById('alerta_post_feito').style.color = 'green';
+            document.getElementById('alerta_post_feito').innerHTML = 'Postagem feita com sucesso!';
+
+            setTimeout(function(){
+                window.location.reload();
+                document.getElementById('alerta_post_feito').style.display = 'none';
+            }, 2000);
 
         }else{
-            console.log('falha');
+
+            document.getElementById('alerta_post_feito').style.display = 'block';
+            document.getElementById('alerta_post_feito').style.color = 'red';
+            document.getElementById('alerta_post_feito').innerHTML = 'Falha ao fazer postagem!';
+
+            
         }
 
     })

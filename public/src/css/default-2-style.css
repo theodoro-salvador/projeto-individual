@@ -69,7 +69,7 @@ button:hover{
     -webkit-text-stroke: 1px var(--dotf-text-color-2);
 }
 
-.create-topic{
+.button{
     box-sizing: border-box;
     padding: 5px;
     display: flex;
@@ -277,4 +277,16 @@ button:hover{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.topic-alert{
+    display: none;
+    height: fit-content;
+    width: fit-content;
+    font-size: 0.8em;
+    padding: 5px;
+    margin-top: 5px;
+    border: 1px solid var(--dotf-alt-color-1);
+    background-color: white;
+    color: green;
 }

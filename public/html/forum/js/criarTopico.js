@@ -23,7 +23,11 @@ function criarTopico(){
     let autorTopico = sessionStorage.ID_USUARIO;
 
     if(tituloTopico == '' || descricaoTopico == '' || autorTopico == ''){
-        console.log('tudo vazio');
+
+            document.getElementById('alerta_topico_criado').style.display = 'block';
+            document.getElementById('alerta_topico_criado').style.color = 'red';
+            document.getElementById('alerta_topico_criado').innerHTML = 'Preencha todos os campos!';
+        
         return;
     }
 
@@ -44,11 +48,19 @@ function criarTopico(){
 
         if(resposta.ok){
 
-            setTimeout(abrirFecharCriarTopico('none'), 2000);
+            document.getElementById('alerta_topico_criado').style.display = 'block';
+            document.getElementById('alerta_topico_criado').style.color = 'green';
+            document.getElementById('alerta_topico_criado').innerHTML = 'Tópico criado com sucesso!';
+
+            setTimeout(function(){
+                window.location.reload();
+            }, 2000);
 
         }else{
 
-            console.log('Falha em criar tópico');
+            document.getElementById('alerta_topico_criado').style.display = 'block';
+            document.getElementById('alerta_topico_criado').style.color = 'red';
+            document.getElementById('alerta_topico_criado').innerHTML = 'Falha em criar tópico!';
 
         }
 

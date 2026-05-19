@@ -121,7 +121,7 @@
                 </div>
             </div>
 
-            <div class="left-menu-box create-topic">
+            <div class="left-menu-box button">
                     <div class="create-topic-button">
                         <button onclick="abrirFecharCriarTopico('block')">
                             Fazer Publicação
@@ -131,6 +131,12 @@
                             <span class="span-validacao" id="span_validacao_login_topic">É necessário estar logado para fazer uma publicação.</span>
                         </div>
                     </div>
+            </div>
+
+            <div class="left-menu-box button">
+                <a href="./forum.html">
+                    <button>Voltar</button>
+                </a>
             </div>
         </div>
     </div>
@@ -150,6 +156,10 @@
                     </label>
                     <textarea name="texto_post" id="texto_post" rows="8" cols="84" maxlength="500"></textarea>
                 </div>
+            </div>
+
+            <div class="topic-alert" id="alerta_post_feito">
+                <span>Postagem feita com sucesso!</span>
             </div>
             
             <div class="topic-submit">
