@@ -298,7 +298,11 @@
 
             if(resposta.ok){
                 document.getElementById('span_registro_realizado').style.display = 'block';
-                document.getElementById('span_registro_realizado') = 'Registro realizado com sucesso!';
+                document.getElementById('span_registro_realizado').innerHTML = 
+                `
+                    Registro realizado com sucesso!<br>
+                    Redirecionando para login...
+                `;
 
                 
                 input_registrar_username.value = '';
@@ -309,7 +313,9 @@
                 setTimeout(function(){
                     document.getElementById('span_registro_realizado').style.display = 'none';
                 }, 2000)
-                setTimeout(alterLoginRegis(), 2000);
+                setTimeout(function(){
+                    alterLoginRegis()
+                }, 2000);
             } else{
                 document.getElementById('span_registro_realizado').style.display = 'block';
                 document.getElementById('span_registro_realizado') = 'Falha no registro';
@@ -350,7 +356,11 @@
 
         }).then(function(resposta){
             if(resposta.ok){
-                document.getElementById('span_login_realizado').innerHTML = 'Login realizado com sucesso!';
+                document.getElementById('span_login_realizado').innerHTML = 
+                `
+                    Login realizado com sucesso!<br>
+                    Redirecionando para painel de usuário...
+                `;
                 document.getElementById('span_login_realizado').style.display = 'block';
                 
                 console.log(resposta);
@@ -368,7 +378,9 @@
                 setTimeout(function() {
                     document.getElementById('span_login_realizado').style.display = 'none';
                 }, 2000);
-                setTimeout(alterLoginUsu, 2000);
+                setTimeout(function() {
+                    alterLoginUsu()
+                }, 2000);
             }else{
 
                 document.getElementById('span_login_realizado').innerHTML = 'Falha ao entrar';
