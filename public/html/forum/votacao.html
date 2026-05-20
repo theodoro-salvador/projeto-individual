@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fórum</title>
+    <title>Votação Álbuns Favoritos</title>
 
     <link rel="icon" href="../../src/img/icons/icon.png">
 
     <link rel="stylesheet" href="../../src/css/global-style.css">
     <link rel="stylesheet" href="../../src/css/default-2-style.css">
-    <link rel="stylesheet" href="../../src/css/forum-home-style.css">
+    <link rel="stylesheet" href="../../src/css/forum-topic.style.css">
+
 </head>
 <body>
+    
     <div class="left-menu">
         <div class="left-menu-content">
             <div class="user-box left-menu-box" id="user_box">
@@ -120,19 +122,7 @@
             </div>
 
             <div class="left-menu-box button">
-                    <div class="create-topic-button">
-                        <button onclick="abrirFecharCriarTopico('block')">
-                            Criar Tópico
-                        </button>
-
-                        <div class="div-validacao" id="validacao_login_topic">
-                            <span class="span-validacao" id="span_validacao_login_topic">É necessário estar logado para criar um tópico.</span>
-                        </div>
-                    </div>
-            </div>
-
-            <div class="left-menu-box button">
-                <a href="../../index.html">
+                <a href="./forum.html">
                     <button>Voltar</button>
                 </a>
             </div>
@@ -144,28 +134,20 @@
         
         <div class="topic-form-section-content">
             <div class="topic-form-title">
-                <span>Criar Topico</span>
+                <span>Fazer Publicacao</span>
             </div>
 
             <div class="topic-form">
                 <div class="topic-input">
-                    <label for="titulo_topico">
-                        Nome: 
+                    <label for="texto_post">
+                        Digite o conteúdo da sua publicação: 
                     </label>
-                    <input type="text" name="titulo_topico" id="titulo_topico" maxlength="50">
+                    <textarea name="texto_post" id="texto_post" rows="8" cols="84" maxlength="500"></textarea>
                 </div>
-
-                <div class="topic-input">
-                    <label for="descricao_topico">
-                        Descrição: 
-                    </label>
-                    <textarea name="descricao_topico" id="descricao_topico" rows="4" cols="42" maxlength="255"></textarea>
-                </div>
-                
             </div>
 
-            <div class="topic-alert" id="alerta_topico_criado">
-                <span>Tópico criado com sucesso!</span>
+            <div class="topic-alert" id="alerta_post_feito">
+                <span>Postagem feita com sucesso!</span>
             </div>
             
             <div class="topic-submit">
@@ -173,94 +155,83 @@
                     Cancelar
                 </button>
 
-                <button onclick="criarTopico()">
-                    Criar Tópico
+                <button onclick="fazerPost()">
+                    Fazer Publicação
                 </button>
             </div>
         </div>
     </div>
 
     <div class="right-side">
-        <header>
-            <div class="header-content">
-                <img src="../../src/img/painkiller.png" alt="" class="header-img img1">
-                
-                <span class="header-title">
-                    Forum
-            </span>
-            
-            <img src="../../src/img/painkiller.png" alt="" class="header-img img2">
-        </div>
-    </header>
-    
-    <main>
-        <div class="main-content" id="main_content">
+
+        <main>
             <div class="main-header">
-                <div class="main-header-section-1">
-                    <span>Tópico</span>
-                </div>
-                <div class="main-header-section-2">
-
-                    <div>
-                        <span>Autor</span>
+                <div class="main-header-left">
+                    <div class="topico-titulo">
+                        <span>Votação Álbuns Favoritos</span>
                     </div>
                     
-                    <div>
-                        <span>Data de Criação</span>
-                    </div>
-
-                    <div>
-                        <span>Quantidade de Postagens</span>
-                    </div>
-
-                    <div>
-                        <span>Última Postagem</span>
+                    <div class="topico-descricao">
+                        <span>
+                            Votação para exibir os álbuns do Judas Priest preferidos pelo usuários.
+                        </span>
                     </div>
                 </div>
-            </div>
-
-            <div class="topic">
-                <div class="topic-info-1">
-                    <div class="topic-title">
-                        <a href="./votacao.html">
-                            <span>Votação Álbuns Favoritos</span>
-                        </a>
-                        <hr>
+            
+                <div class="main-header-right">
+                    <div class="topico-autor">
+                        <span>Criado por: Administração</span>
                     </div>
                     
-                    <div class="topic-subtitle">
-                        <span>Votação para exibir os álbuns do Judas Priest preferidos pelo usuários.</span>
-                    </div>
-                </div>
-
-                <div class="topic-info-2">
-
-                    <div>
-                        <span>Administração</span>
-                    </div>
-                    
-                    <div>
-                        <span>20/05/2026</span>
-                    </div>
-                    
-                    <div>
-                        <span>1</span>
-                    </div>
-
-                    <div>
-                        <span>Por: Administração <br> Em: 20/05/2026</span>
+                    <div class="topico-data">
+                        <span>Criado em: 20/05/2026</span>
                     </div>
                 </div>
             </div>
-        </div>
-    </main>
-</div>
+
+            <div class="main-content">
+                <div class="posts" id="posts_section">
+
+                    <div class="post">
+                        <div class="post-header">
+                            <div class="post-autor">
+                                <span>Administração</span>
+                            </div>
+
+                            <div class="post-data">
+                                <span>Publicado em: 20/05/2026</span>
+                            </div>
+                        </div>
+
+                        <div class="post-content">
+                            <span>
+                                O Judas Priest tem uma extensa discografia, que apenas em discos de estúdio chega a marca dos 19 álbuns!<br>
+                                Vote abaixo no seu favorito, para que outros usuários possam saber por onde começar a ouvir a banda!
+                            </span>
+                            <br><br>
+                            <div class="votacao">
+                                <form>
+                                    <div class="votacao-input">
+                                        <div class="votacao-input-left">
+                                            <input type="radio" id="rocka-rolla">
+                                        </div>
+                                        <label for="rocka-rolla" class="votacao-input-right">
+                                            <span>Rocka Rolla</span>
+                                            <img src="../../src/img/covers/rocka-rolla.jpg" alt="" width="250px">
+                                        </label>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </main>
+
+    </div>
 
 </body>
 </html>
 <script src="./js/sessao.js"></script>
 <script src="./js/loginCadastro.js"></script>
-<script src="./js/criarTopico.js"></script>
-<script>
-    window.onload = receberIds();
-</script>

@@ -23,7 +23,7 @@ body{
     gap: 10px;
 }
 
-.main-header-right{
+.main-header-left{
     height: 100%;
     width: 75%;
     display: flex;

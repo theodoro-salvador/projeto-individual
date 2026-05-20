@@ -138,22 +138,22 @@ async function exibirPosts(resposta){
             document.getElementById('posts_section').innerHTML += 
             `
                 <div class="post">
-                        <div class="post-header">
-                            <div class="post-autor">
-                                <span>${autorPostagem}</span>
-                            </div>
-
-                            <div class="post-data">
-                                <span>Publicado em: ${diaPostagem}/${mesPostagem}/${anoPostagem} às ${horaPostagem}:${minutoPostagem}:${segundoPostagem}</span>
-                            </div>
+                    <div class="post-header">
+                        <div class="post-autor">
+                            <span>${autorPostagem}</span>
                         </div>
 
-                        <div class="post-content">
-                            <span>
-                                ${conteudoPostagem}
-                            </span>
+                        <div class="post-data">
+                            <span>Publicado em: ${diaPostagem}/${mesPostagem}/${anoPostagem} às ${horaPostagem}:${minutoPostagem}:${segundoPostagem}</span>
                         </div>
                     </div>
+
+                    <div class="post-content">
+                        <span>
+                            ${conteudoPostagem}
+                        </span>
+                    </div>
+                </div>
             `;
 
         }
@@ -186,7 +186,7 @@ function exibirDadosTopico(){
 
                 document.getElementById('dados_topico').innerHTML +=
                 `
-                    <div class="main-header-right">
+                    <div class="main-header-left">
                         <div class="topico-titulo">
                             <span>${tituloTopico}</span>
                         </div>
@@ -198,7 +198,7 @@ function exibirDadosTopico(){
                         </div>
                     </div>
                 
-                    <div class="main-header-left">
+                    <div class="main-header-right">
                         <div class="topico-autor">
                             <span>Criado por: ${autorTopico}</span>
                         </div>
@@ -208,6 +208,8 @@ function exibirDadosTopico(){
                         </div>
                     </div>
                 `;
+
+                document.querySelector('title').innerHTML = `${tituloTopico}`;
 
 
             })

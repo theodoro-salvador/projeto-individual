@@ -18,7 +18,7 @@ function exibir(idTopico){
       titulo,
       descricao,
       usuario2.nome AS autorPostagem,
-      IFNULL(CONCAT('Por: ', usuario2.nome, '<br> Em: ', YEAR(dtPostagem),'/', MONTH(dtPostagem), '/', DAY(dtPostagem)), 'Nenhuma <br> Postagem') AS ultimaPostagem,
+      IFNULL(CONCAT('Por: ', usuario2.nome, '<br> Em: ', DAY(dtPostagem),'/', MONTH(dtPostagem), '/', YEAR(dtPostagem)), 'Nenhuma <br> Postagem') AS ultimaPostagem,
       dtPostagem,
       (
         SELECT 
