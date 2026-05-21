@@ -1,6 +1,10 @@
+html{
+    scrollbar-gutter: stable;
+}
+
 body{
     min-height: 100vh;
-    max-height: 100vh;
+    max-height: fit-content;
     min-width: 100vw;
     max-width: 100vw;
     box-sizing: border-box;
@@ -41,6 +45,8 @@ button:hover{
     height: 100%;
     width: 18vw;
     box-sizing: border-box;
+    position: sticky;
+    top: 20px;
     padding: 5px;
     display: flex;
 }

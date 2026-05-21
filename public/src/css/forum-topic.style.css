@@ -49,6 +49,18 @@ body{
     border: 3px solid var(--dotf-alt-color-1);
     padding: 7.5px 0;
     margin-bottom: 15px;
+    position: relative;
+}
+
+.preenchimento{
+    height: 15px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-top-left-radius: 11.5px;
+    border-top-right-radius: 11.5px;
+    background-color: var(--dotf-alt-color-2);
 }
 
 .post{
