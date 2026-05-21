@@ -1,0 +1,25 @@
+.votacao{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.votacao-input{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.votacao-input label{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.votacao-input label img{
+    width: 250px;
+    box-shadow: 0 5px 5px var(--shadow-color);
+}
