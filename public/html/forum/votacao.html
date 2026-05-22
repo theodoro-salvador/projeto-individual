@@ -213,7 +213,7 @@
 
                             <br><br>
 
-                            <form class="votacao">
+                            <div class="votacao">
                                 <div class="votacao-input">
                                     <input name="votacao_album" type="radio" id="rocka_rolla" value="1">
                                     
@@ -389,8 +389,10 @@
                                     <div class="votacao-submit-button">
                                         <button onclick="enviarVoto()">Enviar Voto</button>
                                     </div>
+
+                                    <div class="topic-alert" id="msg_validacao_voto"></div>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                     
@@ -404,3 +406,4 @@
 </html>
 <script src="./js/sessao.js"></script>
 <script src="./js/loginCadastro.js"></script>
+<script src="./js/votacao.js"></script>

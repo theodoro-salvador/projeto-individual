@@ -266,7 +266,8 @@
 
         let validacao = validacaoConfirmarSenha + validacaoSenha + validacaoEmail;
         
-        if(usernameLet == '' ||
+        if(
+            usernameLet == '' ||
             emailLet == '' ||
             senhaLet == '' ||
             confirmarSenha == ''
