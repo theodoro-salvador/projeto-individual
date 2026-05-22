@@ -1,9 +1,9 @@
 function enviarVoto(){
 
-    let voto = document.querySelector('input[name="votacao_album"]:checked').value;
+    let idDisco = document.querySelector('input[name="votacao_album"]:checked').value;
     // console.log(voto)
 
-    if(!voto){
+    if(!idDisco){
 
         document.getElementById('msg_validacao_voto').style.display = 'block';
         document.getElementById('msg_validacao_voto').innerHTML = 'Escolha um álbum para votar!';
@@ -20,7 +20,7 @@ function enviarVoto(){
                 'Content-Type':'application/json',
             },
             body: JSON.stringify({
-                fkVotoServer: voto,
+                idDiscoServer: idDisco,
                 idUsuarioServer: sessionStorage.ID_USUARIO,
             }),
         })

@@ -2,10 +2,10 @@ var votoModel = require('../models/votoModel');
 
 function enviarVoto(req, res){
 
-    var fkVoto = req.body.fkVotoServer;
+    var idDisco = req.body.idDiscoServer;
     var idUsuario = req.body.idUsuarioServer;
 
-    votoModel.enviarVoto(fkVoto, idUsuario)
+    votoModel.enviarVoto(idDisco, idUsuario)
     .then(function (resposta){
 
         res.json(resposta);

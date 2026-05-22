@@ -1,18 +1,30 @@
 CREATE DATABASE projetoJudasPriest;
 USE projetoJudasPriest;
 
+CREATE TABLE usuario(
+idUsuario INT PRIMARY KEY AUTO_INCREMENT,
+nome VARCHAR(45) NOT NULL,
+email VARCHAR(45) NOT NULL,
+senha VARCHAR(45) NOT NULL
+);
+
 CREATE TABLE disco(
 idDisco INT PRIMARY KEY AUTO_INCREMENT,
 nome VARCHAR(23),
 dtLancamento DATE
 );
 
-CREATE TABLE usuario(
-idUsuario INT PRIMARY KEY AUTO_INCREMENT,
-nome VARCHAR(45) NOT NULL,
-email VARCHAR(45) NOT NULL,
-senha VARCHAR(45) NOT NULL,
-fkVoto INT
+CREATE TABLE voto(
+fkDisco INT,
+CONSTRAINT chFkDisco
+	FOREIGN KEY (fkDisco)
+		REFERENCES disco (idDisco),
+fkUsuario INT UNIQUE,
+CONSTRAINT chFkUsuario
+	FOREIGN KEY (fkUsuario)
+		REFERENCES usuario (idUsuario),
+CONSTRAINT pkVoto
+	PRIMARY KEY (fkDisco, fkUsuario)	
 );
 
 CREATE TABLE topico(

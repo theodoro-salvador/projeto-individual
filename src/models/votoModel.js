@@ -1,10 +1,11 @@
 var database = require('../database/config');
 
-function enviarVoto(fkVoto, idUsuario){
+function enviarVoto(idDisco, idUsuario){
 
     var instrucaoSql = 
     `
-        INSERT INTO usuario (fkVoto) VALUE (${fkVoto}) WHERE idUsuario = ${idUsuario};
+        INSERT INTO voto (fkDisco, fkUsuario) VALUES 
+        (${idDisco}, ${idUsuario});
     `;
 
     return database.executar(instrucaoSql);
