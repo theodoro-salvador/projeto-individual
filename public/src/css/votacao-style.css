@@ -6,6 +6,7 @@
 }
 
 .votacao-input{
+    margin-right: 27px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -16,7 +17,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
+    gap: 10px;   
+    font-family: 'judas';
+    /* font-size: 1.1em; */
 }
 
 .votacao-input label img{
@@ -29,4 +32,56 @@
 
 .votacao-submit-button{
     margin-bottom: 15px;
+}
+
+/* DASHBOARD */
+
+.votacao-dashboard{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.kpi-section{
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.dashboard-kpi{
+    height: 13vw;
+    width: 14vw;
+    box-sizing: border-box;
+    padding: 5px;
+    border: 7px double var(--dotf-alt-color-1);
+    border-radius: 15px;
+    box-shadow: 0 5px 5px var(--shadow-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5%;
+}
+
+.kpi-title{
+    margin-top: 5px;
+    font-family: 'judas';
+    font-size: 1.1em;
+}
+
+.kpi-content{
+    height: 60%;
+    width: 60%;
+    background-color: var(--dotf-alt-color-4);
+    border: 2px solid var(--dotf-alt-color-3);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3em;
+    font-weight: bold;
+    /* font-family: 'judas'; */
+    box-shadow: 0 5px 5px var(--shadow-color);
 }
