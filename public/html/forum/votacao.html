@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="../../src/css/forum-topic.style.css">
     <link rel="stylesheet" href="../../src/css/votacao-style.css">
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 <body>
     
@@ -174,7 +176,7 @@
                     
                     <div class="topico-descricao">
                         <span>
-                            Votação para exibir os álbuns do Judas Priest preferidos pelo usuários.
+                            Votação para exibir os álbuns do Judas Priest preferidos pelos usuários.
                         </span>
                     </div>
                 </div>
@@ -448,7 +450,19 @@
                                 </div>
 
                                 <div class="charts-section">
-                                    oi
+                                    <div class="chart-box" id="chart_albuns">
+                                        <div class="chart-title">
+                                            <span>Discos Preferidos</span>
+                                        </div>
+
+                                        <div class="chart">
+                                            <canvas id="canvas_albuns"></canvas>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="chart">
+                                        <canvas id="canvas_decadas"></canvas>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -456,7 +470,6 @@
                 </div>
             </div>
         </main>
-
     </div>
 
 </body>
@@ -464,3 +477,4 @@
 <script src="./js/sessao.js"></script>
 <script src="./js/loginCadastro.js"></script>
 <script src="./js/votacao.js"></script>
+<script src="./js/dashboard.js"></script>

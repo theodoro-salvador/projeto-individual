@@ -11,8 +11,8 @@ function selecaoVoto(){
     for(let i = 0; i < listaImagens.length; i++){
 
         // console.log('entrei no for');
-        // console.log(listaImagens[i]);
-        listaImagens[i].style.borderColor = '#db2c31';
+        // console.log(listaImagens[i].checked);
+            listaImagens[i].style.borderColor = '#db2c31';
 
     }
 
@@ -32,6 +32,10 @@ function enviarVoto(){
         
         document.getElementById('msg_validacao_voto').style.display = 'block';
         document.getElementById('msg_validacao_voto').innerHTML = 'É necessário logar para votar!';
+
+        setTimeout(function(){
+            document.getElementById('msg_validacao_voto').style.display = 'none';
+        }, 2000);
         
     } else{
 
