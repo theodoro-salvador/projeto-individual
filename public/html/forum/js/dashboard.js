@@ -56,13 +56,12 @@ async function buscarGraficoAlbuns(){
     let nomesDiscos = [];
     let qtdVotosDiscos = [];
 
-    await fetch('/graficos/buscarGraficoAlbuns', {
+    let resultado = await fetch('/graficos/buscarGraficoAlbuns', {
         method: 'GET',
-    })
-    .then(function (resultado){
+    });
         
         if(resultado.status == 200){
-            resultado.json().then(function(dadosGrafico){
+            let dadosGrafico = await resultado.json();
 
                 console.log(dadosGrafico);
 
@@ -73,7 +72,6 @@ async function buscarGraficoAlbuns(){
 
                 }
 
-            });
         }
 
         new Chart(chartAlbuns, {
@@ -92,7 +90,6 @@ async function buscarGraficoAlbuns(){
 
         });
 
-});
 
 }
 
@@ -137,21 +134,18 @@ async function buscarGraficoDecadas(){
 
 async function buscarKpiDiscoPreferido(){
 
-    await fetch('/graficos/buscarKpiDiscoPreferido', {
+    let resultado = await fetch('/graficos/buscarKpiDiscoPreferido', {
         method: 'GET',
-    })
-    .then(function(resultado){
+    });
 
         if(resultado.status == 200){
 
-            resultado.json().then(function(dadosKpi){
+            let dadosKpi = await resultado.json()
 
                 document.getElementById('kpi_disco_preferido').innerHTML = `${dadosKpi[0].nomeDisco.toString()}`;
 
-            });
 
         }
 
-    });
 
 }
