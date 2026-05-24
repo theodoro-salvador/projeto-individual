@@ -48,14 +48,15 @@ window.onload = executarFuncoesDashboard();
 function executarFuncoesDashboard(){
     buscarGraficoAlbuns();
     buscarGraficoDecadas();
+    buscarKpiDiscoPreferido();
 }
 
-function buscarGraficoAlbuns(){
+async function buscarGraficoAlbuns(){
 
     let nomesDiscos = [];
     let qtdVotosDiscos = [];
 
-    fetch('/graficos/buscarGraficoAlbuns', {
+    await fetch('/graficos/buscarGraficoAlbuns', {
         method: 'GET',
     })
     .then(function (resultado){
@@ -95,31 +96,26 @@ function buscarGraficoAlbuns(){
 
 }
 
-function buscarGraficoDecadas(){
+async function buscarGraficoDecadas(){
 
     let decadas = [1970, 1980, 1990, 2000, 2010, 2020];
     let votosDecadas = [];
 
-    fetch('/graficos/buscarGraficoDecadas', {
+    let resultado = await fetch('/graficos/buscarGraficoDecadas', {
         method: 'GET',
-    })
-    .then(function (resultado){
-
-        if(resultado.status == 200){
-
-            resultado.json().then(function(dadosGrafico){
-
-                votosDecadas.push(
-                    dadosGrafico[0].decada70, dadosGrafico[0].decada80,
-                    dadosGrafico[0].decada90, dadosGrafico[0].decada00,
-                    dadosGrafico[0].decada10, dadosGrafico[0].decada20
-                );
-
-            })
-
-        }
-
     });
+
+    if(resultado.status == 200){
+
+        let dadosGrafico = await resultado.json();
+
+        votosDecadas.push(
+            dadosGrafico[0].decada70, dadosGrafico[0].decada80,
+            dadosGrafico[0].decada90, dadosGrafico[0].decada00,
+            dadosGrafico[0].decada10, dadosGrafico[0].decada20
+        );
+
+    }
 
     new Chart(chartDecadas, {
 
@@ -132,9 +128,30 @@ function buscarGraficoDecadas(){
                 backgroundColor: '#792026',
                 borderColor: '#db2c31',
             }],
-            options: defaultOptions,
-        }
+        },
+        options: defaultOptions,
 
     })
+
+}
+
+async function buscarKpiDiscoPreferido(){
+
+    await fetch('/graficos/buscarKpiDiscoPreferido', {
+        method: 'GET',
+    })
+    .then(function(resultado){
+
+        if(resultado.status == 200){
+
+            resultado.json().then(function(dadosKpi){
+
+                document.getElementById('kpi_disco_preferido').innerHTML = `${dadosKpi[0].nomeDisco.toString()}`;
+
+            });
+
+        }
+
+    });
 
 }

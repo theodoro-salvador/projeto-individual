@@ -80,7 +80,7 @@
 
 .dashboard-kpi{
     height: 13vw;
-    width: 14vw;
+    width: 15vw;
     box-sizing: border-box;
     padding: 5px;
     border: 7px double var(--dotf-alt-color-1);
@@ -100,7 +100,7 @@
 
 .kpi-content{
     height: 60%;
-    width: 60%;
+    width: 80%;
     background-color: var(--dotf-alt-color-4);
     border: 2px solid var(--dotf-alt-color-3);
     border-radius: 15px;
@@ -111,6 +111,11 @@
     font-weight: bold;
     /* font-family: 'judas'; */
     box-shadow: 0 5px 5px var(--shadow-color);
+}
+
+.kpi-content span{
+    text-align: center;
+    max-width: 100%;
 }
 
 .charts-section{
