@@ -45,8 +45,24 @@ function buscarKpiDiscoPreferido(req, res){
 
 }
 
+function buscarKpiDecadaPreferida(req, res){
+
+    graficoModel.buscarKpiDecadaPreferida()
+    .then(function(resposta){
+
+        if(resposta.length == 1){
+            res.status(200).json(resposta);
+        } else{
+            res.status(204).send('Nenhum resultado');
+        }
+
+    })
+
+}
+
 module.exports = {
     buscarGraficoAlbuns,
     buscarGraficoDecadas,
     buscarKpiDiscoPreferido,
+    buscarKpiDecadaPreferida,
 };

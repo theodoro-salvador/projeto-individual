@@ -77,8 +77,31 @@ function buscarKpiDiscoPreferido(){
 
 }
 
+function buscarKpiDecadaPreferida(){
+
+    var instrucaoSql = 
+    `
+        SELECT
+            disco.nome AS nomeDisco,
+            (
+                FLOOR(YEAR(disco.dtLancamento) * 0.1) * 10
+            ) AS decadaDisco,
+            COUNT(voto.fkUsuario) AS qtdVotos
+        FROM disco
+            JOIN voto
+                ON voto.fkDisco = disco.idDisco
+        GROUP BY nomeDisco, decadaDisco
+        ORDER BY qtdVotos DESC
+        LIMIT 1;
+    `;
+
+    return database.executar(instrucaoSql);
+
+}
+
 module.exports = {
     buscarGraficoAlbuns,
     buscarGraficoDecadas,
     buscarKpiDiscoPreferido,
+    buscarKpiDecadaPreferida,
 };

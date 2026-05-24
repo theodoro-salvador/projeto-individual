@@ -48,6 +48,7 @@
     border: 7px double var(--dotf-alt-color-1);
     border-radius: 15px;
     box-shadow: 0 5px 5px var(--shadow-color);
+    cursor: pointer;
 }
 
 .votacao-submit{
