@@ -1,3 +1,52 @@
+window.onload = buscarGraficoAlbuns();
+
+function buscarGraficoAlbuns(){
+
+    let nomesDiscos = [];
+    let qtdVotosDiscos = [];
+
+    fetch('/graficos/buscarGraficoAlbuns', {
+        method: 'GET',
+    })
+    .then(function (resultado){
+        
+        if(resultado.status == 200){
+            resultado.json().then(function(dadosGrafico){
+
+                console.log(dadosGrafico);
+
+                for(let i = 0; i < dadosGrafico.length; i++){
+
+                    nomesDiscos.push(dadosGrafico[i].nomeDisco);
+                    qtdVotosDiscos.push(dadosGrafico[i].qtdVotos);
+
+                }
+
+            });
+        }
+
+        new Chart(chartAlbuns, {
+
+            type: 'line',
+            data: {
+                labels: nomesDiscos,
+                datasets: [{
+                    label: 'Quantidade de Votos',
+                    data: qtdVotosDiscos,
+                    backgroundColor: '#792026',
+                    borderColor: '#db2c31',
+                }],
+            },
+            options: defaultOptions,
+
+        });
+
+});
+
+console.log(nomesDiscos, qtdVotosDiscos)
+
+}
+
 const chartAlbuns = document.getElementById('canvas_albuns');
 const chartDecadas = document.getElementById('canvas_decadas');
 
@@ -43,25 +92,3 @@ const defaultOptions = {
             },
         }
     }
-
-new Chart(chartAlbuns, {
-
-    type: 'line',
-    data: {
-        labels: ['oi', 'tudo', 'bem'],
-        datasets: [{
-            label: 'Quantidade de Votos',
-            data: [1, 2, 3],
-            backgroundColor: '#792026',
-            borderColor: '#db2c31',
-        }],
-    },
-    options: defaultOptions,
-
-});
-
-function buscarDadosGraficoAlbuns(){
-
-    fetch()
-
-}
