@@ -1,4 +1,54 @@
-window.onload = buscarGraficoAlbuns();
+const chartAlbuns = document.getElementById('canvas_albuns');
+const chartDecadas = document.getElementById('canvas_decadas');
+const defaultOptions = {
+        responsive: true,
+        maintainAspectRatio: false,
+        layout: {
+            padding: 20,
+        },
+        scales: {
+            x: {
+                grid: {
+                    color: '#98b0dc',
+                    lineWidth: 0.5,
+                }
+            },
+            y: {
+                // min: 1,
+                // max: 15,
+                ticks: {
+                    stepSize: 1,
+                },
+                grid: {
+                    color: '#98b0dc',
+                    lineWidth: 0.5,
+                }
+            },
+        },
+        plugins: {
+            legend: {
+                position: 'bottom',
+            },
+        },
+        elements: {
+            line: {
+                borderWidth: 2,
+            },
+            point: {
+                radius: 5,
+                backgroundColor: '#792026',
+                borderColor: '#db2c31',
+                borderWidth: 2,
+            },
+        }
+    }
+
+window.onload = executarFuncoesDashboard();
+
+function executarFuncoesDashboard(){
+    buscarGraficoAlbuns();
+    buscarGraficoDecadas();
+}
 
 function buscarGraficoAlbuns(){
 
@@ -43,52 +93,48 @@ function buscarGraficoAlbuns(){
 
 });
 
-console.log(nomesDiscos, qtdVotosDiscos)
-
 }
 
-const chartAlbuns = document.getElementById('canvas_albuns');
-const chartDecadas = document.getElementById('canvas_decadas');
+function buscarGraficoDecadas(){
 
-const defaultOptions = {
-        responsive: true,
-        maintainAspectRatio: false,
-        layout: {
-            padding: 20,
-        },
-        scales: {
-            x: {
-                grid: {
-                    color: '#98b0dc',
-                    lineWidth: 0.5,
-                }
-            },
-            y: {
-                min: 1,
-                max: 15,
-                ticks: {
-                    stepSize: 5,
-                },
-                grid: {
-                    color: '#98b0dc',
-                    lineWidth: 0.5,
-                }
-            },
-        },
-        plugins: {
-            legend: {
-                position: 'bottom',
-            },
-        },
-        elements: {
-            line: {
-                borderWidth: 2,
-            },
-            point: {
-                radius: 5,
+    let decadas = [1970, 1980, 1990, 2000, 2010, 2020];
+    let votosDecadas = [];
+
+    fetch('/graficos/buscarGraficoDecadas', {
+        method: 'GET',
+    })
+    .then(function (resultado){
+
+        if(resultado.status == 200){
+
+            resultado.json().then(function(dadosGrafico){
+
+                votosDecadas.push(
+                    dadosGrafico[0].decada70, dadosGrafico[0].decada80,
+                    dadosGrafico[0].decada90, dadosGrafico[0].decada00,
+                    dadosGrafico[0].decada10, dadosGrafico[0].decada20
+                );
+
+            })
+
+        }
+
+    });
+
+    new Chart(chartDecadas, {
+
+        type: 'bar',
+        data: {
+            labels: decadas,
+            datasets: [{
+                label: 'Quantidade de Votos',
+                data: votosDecadas,
                 backgroundColor: '#792026',
                 borderColor: '#db2c31',
-                borderWidth: 2,
-            },
+            }],
+            options: defaultOptions,
         }
-    }
+
+    })
+
+}

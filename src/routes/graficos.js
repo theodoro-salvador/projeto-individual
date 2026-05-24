@@ -7,4 +7,8 @@ router.get('/buscarGraficoAlbuns', function(req, res){
     graficoController.buscarGraficoAlbuns(req, res);
 });
 
+router.get('/buscarGraficoDecadas', function(req, res){
+    graficoController.buscarGraficoDecadas(req,res);
+});
+
 module.exports = router;
