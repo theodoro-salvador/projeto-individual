@@ -90,6 +90,21 @@ function buscarKpiFormacaoPreferida(req, res){
 
 }
 
+function buscarTabelaFormacoes(req, res){
+
+    graficoModel.buscarTabelaFormacoes()
+    .then(function(resposta){
+
+        if(resposta.length == 8){
+            res.status(200).json(resposta);
+        } else{
+            res.status(204).send('Nenhum resultado');
+        }
+
+    });
+
+}
+
 module.exports = {
     buscarGraficoAlbuns,
     buscarGraficoDecadas,
@@ -97,4 +112,5 @@ module.exports = {
     buscarKpiDiscoPreferido,
     buscarKpiDecadaPreferida,
     buscarKpiFormacaoPreferida,
+    buscarTabelaFormacoes,
 };

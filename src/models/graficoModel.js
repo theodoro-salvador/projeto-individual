@@ -140,6 +140,17 @@ function buscarKpiFormacaoPreferida(){
 
 }
 
+function buscarTabelaFormacoes(){
+
+    var instrucaoSql =
+    `
+        SELECT * FROM formacao;
+    `;
+
+    return database.executar(instrucaoSql);
+
+}
+
 module.exports = {
     buscarGraficoAlbuns,
     buscarGraficoDecadas,
@@ -147,4 +158,5 @@ module.exports = {
     buscarKpiDiscoPreferido,
     buscarKpiDecadaPreferida,
     buscarKpiFormacaoPreferida,
+    buscarTabelaFormacoes,
 };

@@ -170,3 +170,48 @@ canvas{
     border-radius: 15px;
     /* background-color: var(--dotf-alt-color-4); */
 }
+
+/* TABELA FORMAÇÕES */
+
+.tabela-formacoes{
+    height: fit-content;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    text-align: center;
+    border: 7px double var(--dotf-alt-color-1);
+    border-radius: 15px;
+}
+
+table#table_formacoes{
+    height: fit-content;
+    width: 90%;
+    border: 2px solid var(--dotf-alt-color-3);
+    border-radius: 15px;
+    border-spacing: 0;
+}
+
+#table_formacoes tr{
+    height: 30px;
+}
+
+#table_formacoes th{
+    border: 1px solid var(--dotf-alt-color-3);
+    border-bottom: none;
+    border-top: none;
+}
+
+#table_formacoes td{
+    border: 1px solid var(--dotf-alt-color-3);
+    border-bottom: none;
+}
+
+#table_formacoes .table-corner-right{
+    border-right: none;
+}
+
+#table_formacoes .table-corner-left{
+    border-left: none;
+}

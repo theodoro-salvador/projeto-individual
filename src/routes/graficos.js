@@ -27,4 +27,8 @@ router.get('/buscarKpiFormacaoPreferida', function(req, res){
     graficoController.buscarKpiFormacaoPreferida(req, res);
 });
 
+router.get('/buscarTabelaFormacoes', function(req, res){
+    graficoController.buscarTabelaFormacoes(req, res);
+});
+
 module.exports = router;

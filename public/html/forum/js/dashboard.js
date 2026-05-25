@@ -53,6 +53,7 @@ function executarFuncoesDashboard(){
     buscarKpiDiscoPreferido();
     buscarKpiDecadaPreferida();
     buscarKpiFormacaoPreferida();
+    buscarTabelaFormacoes();
 }
 
 async function buscarGraficoAlbuns(){
@@ -222,6 +223,48 @@ async function buscarKpiFormacaoPreferida(){
         let dadosKpi = await resultado.json();
 
         document.getElementById('kpi_formacao_preferida').innerHTML = `Formação ${dadosKpi[0].formacaoDiscos}`;
+
+    }
+
+}
+
+async function buscarTabelaFormacoes(){
+
+    let resultado = await fetch('/graficos/buscarTabelaFormacoes', {
+        method: 'GET',
+    });
+
+    if(resultado.status == 200){
+
+        let dadosTabela = await resultado.json();
+
+        for(let i = 0; i < dadosTabela.length; i++){
+
+            document.getElementById('table_formacoes').innerHTML +=
+            `
+                <tr>
+                    <td class="table-corner-left">
+                        <span>${dadosTabela[i].idFormacao}</span>
+                    </td>
+                    <td>
+                        <span>${dadosTabela[i].vocal}</span>
+                    </td>
+                    <td>
+                        <span>${dadosTabela[i].guitarra1}</span>
+                    </td>
+                    <td>
+                        <span>${dadosTabela[i].guitarra2}</span>
+                    </td>
+                    <td>
+                        <span>${dadosTabela[i].baixo}</span>
+                    </td>
+                    <td class="table-corner-right">
+                        <span>${dadosTabela[i].bateria}</span>
+                    </td>
+                </tr>
+            `;
+
+        }
 
     }
 
