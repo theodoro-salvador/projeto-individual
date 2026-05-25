@@ -82,15 +82,35 @@ function buscarKpiDecadaPreferida(){
     var instrucaoSql = 
     `
         SELECT
-            disco.nome AS nomeDisco,
-            (
+            DISTINCT(
                 FLOOR(YEAR(disco.dtLancamento) * 0.1) * 10
             ) AS decadaDisco,
             COUNT(voto.fkUsuario) AS qtdVotos
         FROM disco
             JOIN voto
                 ON voto.fkDisco = disco.idDisco
-        GROUP BY nomeDisco, decadaDisco
+        GROUP BY decadaDisco
+        ORDER BY qtdVotos DESC
+        LIMIT 1;
+    `;
+
+    return database.executar(instrucaoSql);
+
+}
+
+function buscarKpiFormacaoPreferida(){
+
+    var instrucaoSql = 
+    `
+        SELECT
+            DISTINCT(formacao.idFormacao) AS formacaoDiscos,
+            COUNT(voto.fkUsuario) AS qtdVotos
+        FROM disco
+            JOIN formacao
+                ON disco.fkFormacao = formacao.idFormacao
+            JOIN voto
+                ON voto.fkDisco = disco.idDisco
+        GROUP BY formacaoDiscos
         ORDER BY qtdVotos DESC
         LIMIT 1;
     `;
@@ -104,4 +124,5 @@ module.exports = {
     buscarGraficoDecadas,
     buscarKpiDiscoPreferido,
     buscarKpiDecadaPreferida,
+    buscarKpiFormacaoPreferida,
 };

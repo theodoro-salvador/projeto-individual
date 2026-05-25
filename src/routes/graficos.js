@@ -17,6 +17,10 @@ router.get('/buscarKpiDiscoPreferido', function(req, res){
 
 router.get('/buscarKpiDecadaPreferida', function(req, res){
     graficoController.buscarKpiDecadaPreferida(req, res);
-})
+});
+
+router.get('/buscarKpiFormacaoPreferida', function(req, res){
+    graficoController.buscarKpiFormacaoPreferida(req, res);
+});
 
 module.exports = router;

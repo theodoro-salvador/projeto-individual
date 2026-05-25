@@ -50,6 +50,7 @@ function executarFuncoesDashboard(){
     buscarGraficoDecadas();
     buscarKpiDiscoPreferido();
     buscarKpiDecadaPreferida();
+    buscarKpiFormacaoPreferida();
 }
 
 async function buscarGraficoAlbuns(){
@@ -143,7 +144,7 @@ async function buscarKpiDiscoPreferido(){
 
         let dadosKpi = await resultado.json()
 
-        document.getElementById('kpi_disco_preferido').innerHTML = `${dadosKpi[0].nomeDisco.toString()}`;
+        document.getElementById('kpi_disco_preferido').innerHTML = `${dadosKpi[0].nomeDisco}`;
 
 
     }
@@ -161,7 +162,23 @@ async function buscarKpiDecadaPreferida(){
 
         let dadosKpi = await resultado.json();
 
-        document.getElementById('kpi_decada_preferida').innerHTML = `${dadosKpi[0].decadaDisco.toString()}`;
+        document.getElementById('kpi_decada_preferida').innerHTML = `${dadosKpi[0].decadaDisco}`;
+
+    }
+
+}
+
+async function buscarKpiFormacaoPreferida(){
+
+    let resultado = await fetch('/graficos/buscarKpiFormacaoPreferida', {
+        method: 'GET',
+    });
+
+    if(resultado.status == 200){
+
+        let dadosKpi = await resultado.json();
+
+        document.getElementById('kpi_formacao_preferida').innerHTML = `Formação ${dadosKpi[0].formacaoDiscos}`;
 
     }
 

@@ -41,7 +41,7 @@ function buscarKpiDiscoPreferido(req, res){
             res.status(204).send('Nenhum resultado');
         }
 
-    })
+    });
 
 }
 
@@ -56,7 +56,22 @@ function buscarKpiDecadaPreferida(req, res){
             res.status(204).send('Nenhum resultado');
         }
 
-    })
+    });
+
+}
+
+function buscarKpiFormacaoPreferida(req, res){
+
+    graficoModel.buscarKpiFormacaoPreferida()
+    .then(function(resposta){
+
+        if(resposta.length == 1){
+            res.status(200).json(resposta);
+        } else{
+            res.status(204).send('Nenhum resultado');
+        }
+
+    });
 
 }
 
@@ -65,4 +80,5 @@ module.exports = {
     buscarGraficoDecadas,
     buscarKpiDiscoPreferido,
     buscarKpiDecadaPreferida,
+    buscarKpiFormacaoPreferida,
 };
