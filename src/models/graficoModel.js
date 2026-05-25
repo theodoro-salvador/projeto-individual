@@ -57,6 +57,27 @@ function buscarGraficoDecadas(){
 
 }
 
+function buscarGraficoFormacoes(){
+
+    var instrucaoSql =
+    `
+        SELECT
+            DISTINCT(formacao.idFormacao) AS formacaoDiscos,
+            COUNT(voto.fkUsuario) AS qtdVotos
+        FROM disco
+            JOIN formacao
+                ON disco.fkFormacao = formacao.idFormacao
+            JOIN voto
+                ON voto.fkDisco = disco.idDisco
+        GROUP BY formacaoDiscos
+        HAVING qtdVotos > 0
+        ORDER BY formacaoDiscos;
+    `;
+
+    return database.executar(instrucaoSql);
+
+}
+
 function buscarKpiDiscoPreferido(){
 
     var instrucaoSql =
@@ -122,6 +143,7 @@ function buscarKpiFormacaoPreferida(){
 module.exports = {
     buscarGraficoAlbuns,
     buscarGraficoDecadas,
+    buscarGraficoFormacoes,
     buscarKpiDiscoPreferido,
     buscarKpiDecadaPreferida,
     buscarKpiFormacaoPreferida,

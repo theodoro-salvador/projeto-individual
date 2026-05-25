@@ -1,5 +1,6 @@
 const chartAlbuns = document.getElementById('canvas_albuns');
 const chartDecadas = document.getElementById('canvas_decadas');
+const chartFormacoes = document.getElementById('canvas_formacoes');
 const defaultOptions = {
         responsive: true,
         maintainAspectRatio: false,
@@ -48,6 +49,7 @@ window.onload = executarFuncoesDashboard();
 function executarFuncoesDashboard(){
     buscarGraficoAlbuns();
     buscarGraficoDecadas();
+    buscarGraficoFormacoes();
     buscarKpiDiscoPreferido();
     buscarKpiDecadaPreferida();
     buscarKpiFormacaoPreferida();
@@ -124,6 +126,47 @@ async function buscarGraficoDecadas(){
             datasets: [{
                 label: 'Quantidade de Votos',
                 data: votosDecadas,
+                backgroundColor: '#792026',
+                borderColor: '#db2c31',
+            }],
+        },
+        options: defaultOptions,
+
+    })
+
+}
+
+async function buscarGraficoFormacoes(){
+
+    let formacoes = [];
+    let votosFormacoes = [];
+
+    let resultado = await fetch('/graficos/buscarGraficoFormacoes', {
+        method: 'GET',
+    });
+
+    if(resultado.status == 200){
+
+        let dadosGrafico = await resultado.json();
+
+        for(let i = 0; i < dadosGrafico.length; i++){
+
+            formacoes.push(dadosGrafico[i].formacaoDiscos);
+
+            votosFormacoes.push(dadosGrafico[i].qtdVotos);
+
+        }
+
+    }
+
+    new Chart(chartFormacoes, {
+
+        type: 'bar',
+        data: {
+            labels: formacoes,
+            datasets: [{
+                label: 'Quantidade de Votos',
+                data: votosFormacoes,
                 backgroundColor: '#792026',
                 borderColor: '#db2c31',
             }],

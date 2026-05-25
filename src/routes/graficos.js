@@ -11,6 +11,10 @@ router.get('/buscarGraficoDecadas', function(req, res){
     graficoController.buscarGraficoDecadas(req,res);
 });
 
+router.get('/buscarGraficoFormacoes', function(req, res){
+    graficoController.buscarGraficoFormacoes(req, res);
+});
+
 router.get('/buscarKpiDiscoPreferido', function(req, res){
     graficoController.buscarKpiDiscoPreferido(req, res);
 });
