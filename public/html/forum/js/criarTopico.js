@@ -129,9 +129,9 @@ async function exibirTopicos(resposta){
                         <div class="topic">
                             <div class="topic-info-1">
                                 <div class="topic-title">
-                                    <a href="./topico.html?id=${idTopico}">
+                                    <button onclick="redirecionarTopico(${idTopico})" class="topic-link">
                                         <span>${tituloTopico}</span>
-                                    </a>
+                                    </button>
                                     <hr>
                                 </div>
                                 
@@ -171,5 +171,13 @@ async function exibirTopicos(resposta){
     }
 
 
+
+}
+
+function redirecionarTopico(idTopico){
+
+    sessionStorage.ID_TOPICO_ABERTO = idTopico;
+
+    window.location = './topico.html';
 
 }

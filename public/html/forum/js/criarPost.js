@@ -25,7 +25,8 @@ async function fazerPost(){
     
     let textoPost = document.getElementById('texto_post').value;
     let idUsuario = sessionStorage.ID_USUARIO;
-    let idTopico = new URLSearchParams(window.location.search).get('id');
+    // let idTopico = new URLSearchParams(window.location.search).get('id');
+    let idTopico = sessionStorage.ID_TOPICO_ABERTO;
 
     console.log('Entrando na função obterIdPost');
     
@@ -82,11 +83,11 @@ async function fazerPost(){
 }
 
 window.onload = exibirDadosTopico();
-window.onload = receberIds();
+// window.onload = receberIds();
 
-function receberIds(){
+function receberIds(idTopico){
 
-    let idTopico = new URLSearchParams(window.location.search).get('id');
+    // let idTopico = new URLSearchParams(window.location.search).get('id');
 
     fetch(`/posts/receberIds/${idTopico}`)
     .then(resposta => {
@@ -164,7 +165,11 @@ async function exibirPosts(resposta){
 
 function exibirDadosTopico(){
 
-    let idTopico = new URLSearchParams(window.location.search).get('id');
+    console.log('Entrei na função exibirDadosTopico');
+
+    let idTopico = sessionStorage.ID_TOPICO_ABERTO;
+
+    // let idTopico = new URLSearchParams(window.location.search).get('id');
 
     fetch(`/topicos/exibir/${idTopico}`)
     .then(resposta => {
@@ -217,5 +222,7 @@ function exibirDadosTopico(){
         }
 
     })
+
+    receberIds(idTopico);
 
 }

@@ -143,6 +143,17 @@ main::-webkit-scrollbar-thumb{
     color: var(--dotf-alt-color-3);
 }
 
+button.topic-link{
+    color: var(--dotf-alt-color-3);
+    text-decoration: underline;
+    font-size: 1em;
+    font-weight: lighter;
+    background: none;
+    border: none;
+    padding: 0;
+    /* margin: 0; */
+}
+
 .topic-info-2{
     flex: 1;
     display: flex;

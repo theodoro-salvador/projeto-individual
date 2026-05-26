@@ -15,7 +15,7 @@ const defaultOptions = {
                 }
             },
             y: {
-                // min: 1,
+                min: 0,
                 // max: 15,
                 ticks: {
                     stepSize: 1,
