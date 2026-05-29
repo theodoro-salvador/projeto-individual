@@ -1,0 +1,82 @@
+.record{
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.record-title{
+    font-family: 'judas';
+    font-size: 1.7em;
+    -webkit-text-stroke: 1.5px var(--dotf-text-color-2);
+}
+
+.record-main{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.record-cover{
+    width: 45%;
+    border: 7px double var(--dotf-alt-color-1);
+    border-radius: 15px;
+}
+
+.record-main div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.record-main div span{
+    font-family: 'judas';
+    font-size: 1.3em;
+    -webkit-text-stroke: 1px var(--dotf-text-color-2);
+    /* margin-left: 25%; */
+}
+
+.record-lineup{
+    border: 7px double var(--dotf-alt-color-1);
+    border-radius: 15px;
+    border-spacing: 0;
+}
+
+.record-lineup tr{
+    height: 20px;
+}
+
+.record-lineup th, .record-lineup td{
+    border: 1px solid var(--dotf-alt-color-1);
+    padding: 5px;
+}
+
+.record-lineup .table-title{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.record-lineup .table-bottom-left{
+    border-bottom: none;
+    border-left: none;
+}
+
+.record-lineup .table-bottom-right{
+    border-bottom: none;
+    border-right: none;
+}
+
+.record-date{
+    font-size: 1.2em;
+}
+
+.record hr{
+    margin-top: 30px;
+    width: 95%;
+    border: 1px solid var(--dotf-alt-color-1);
+}
