@@ -1,0 +1,75 @@
+.lineup{
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.lineup-title{
+    font-family: 'judas';
+    font-size: 1.7em;
+    -webkit-text-stroke: 1px var(--dotf-text-color-2);
+}
+
+.lineup-content{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    /* border: 1px solid red; */
+}
+
+.lineup-table{
+    height: fit-content;
+    border: 7px double var(--dotf-alt-color-1);
+    border-radius: 15px;
+    border-spacing: 0;
+}
+
+.lineup-table tr{
+    height: 50px;
+}
+
+.lineup-table th, td{
+    border: 1px solid var(--dotf-alt-color-1);
+    padding: 5px;
+    text-align: center;
+}
+
+.lineup-table .table-top-left{
+    border-top: none;
+    border-left: none;
+}
+
+.lineup-table .table-top-right{
+    border-top: none;
+    border-right: none;
+}
+
+.lineup-table .table-bottom-left{
+    border-bottom: none;
+    border-left: none;
+}
+
+.lineup-table .table-bottom-right{
+    border-bottom: none;
+    border-right: none;
+}
+
+.lineup-records{
+    max-width: 90%;
+    text-align: center;
+}
+
+.lineup-records a{
+    color: var(--dotf-text-color-1);
+}
+
+.lineup hr{
+    width: 90%;
+    border: 1px solid var(--dotf-alt-color-1);
+}

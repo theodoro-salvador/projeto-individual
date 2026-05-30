@@ -111,6 +111,8 @@ main{
 /* IMAGENS */
 
 .main-image{
+    max-width: fit-content;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -118,13 +120,13 @@ main{
 }
 
 .main-image span{
-    width: 50%;
+    max-width: 300px;
     font-size: 0.76em;
     text-align: center;
 }
 
 .main-image img{
-    border: 3px solid var(--sfv-alt-color-1);
+    border: 3px solid var(--dotf-alt-color-1);
     border-radius: 15px;
     box-shadow: 0 5px 10px var(--shadow-color);
 }

@@ -10,7 +10,7 @@
 .record-title{
     font-family: 'judas';
     font-size: 1.7em;
-    -webkit-text-stroke: 1.5px var(--dotf-text-color-2);
+    -webkit-text-stroke: 1px var(--dotf-text-color-2);
 }
 
 .record-main{
