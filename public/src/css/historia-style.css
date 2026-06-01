@@ -1,0 +1,6 @@
+.sub-title{
+    font-family: 'judas';
+    font-size: 1.1em;
+    -webkit-text-stroke: 1px var(--dotf-text-color-2);
+    margin-top: 15px;
+}

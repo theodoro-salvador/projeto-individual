@@ -108,6 +108,10 @@ main{
     -webkit-text-stroke: 1.5px var(--dotf-text-color-2);
 }
 
+.main-p{
+    width: 100%;
+}
+
 /* IMAGENS */
 
 .main-image{
